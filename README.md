@@ -6,6 +6,16 @@ This is the public-facing website for [RolegacyAI](https://rolegacyai.com) — a
 
 ---
 
+## Autonomous Git workflow
+
+This repo follows an autonomous issue-to-implementation workflow. Normal website, content, documentation, styling, and workflow changes can be created, implemented, reviewed, and merged by connected AI coding tools without repeated user approval.
+
+Explicit user approval is required only for destructive or irreversible operations such as repository deletion, production data deletion, billing changes, or unapproved legal/financial commitments.
+
+See `/docs/ops/AUTONOMOUS_GIT_WORKFLOW.md`.
+
+---
+
 ## Project overview
 
 RolegacyAI helps organisations answer a difficult question: *what does this role actually know?* Not what's in the wiki. Not what's in someone's head. What the role itself has accumulated — decisions, lessons, workarounds, operational patterns — from every person who has ever held it.
@@ -23,14 +33,12 @@ Install the Live Server extension and click "Go Live" at the bottom of the edito
 
 **Option 2 — Python (Python 3)**
 ```bash
-cd rolegacyai-site
 python3 -m http.server 8080
 # Open http://localhost:8080
 ```
 
 **Option 3 — Node.js (npx)**
 ```bash
-cd rolegacyai-site
 npx serve .
 # Open the URL shown in your terminal
 ```
@@ -39,26 +47,19 @@ npx serve .
 
 ## GitHub Pages deployment
 
-This site is configured for GitHub Pages via the `rolegacyai/rolegacyai.github.io` repository.
+GitHub Pages serves directly from the **repository root** (`/`) of `github.com/rolegacyai/rolegacyai`. The deployment entrypoint is `index.html` at repo root.
+
+> The `rolelegacyai-site/` folder is a local workspace copy only — it is **not** the deployment source.
 
 ### Deploy steps
 
-1. **Ensure your repository is named** `rolegacyai.github.io` under the `rolegacyai` organisation.
-2. **Push all files** from this folder to the `main` branch of that repository.
-3. **Enable GitHub Pages** in repository Settings → Pages → Source: `main` branch, `/ (root)` folder.
-4. GitHub will automatically build and publish. The site will be live at `https://rolegacyai.github.io` within 1–2 minutes.
+1. Push changes to the `main` branch (repo root files).
+2. GitHub Pages rebuilds automatically within 1–2 minutes.
+3. Live at: **https://rolegacyai.com**
 
 ### Custom domain
 
-To use `rolegacyai.com`:
-
-1. Ensure DNS is configured before adding the CNAME file:
-   - Add an `A` record pointing to GitHub Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - OR add a `CNAME` record pointing `www` to `rolegacyai.github.io`
-2. Only after DNS is propagated: keep the `CNAME` file in this repository (it contains `rolegacyai.com`).
-3. In GitHub Pages settings, enter `rolegacyai.com` as the custom domain and enable HTTPS.
-
-> **Important:** Do not include the `CNAME` file in the repo until your DNS is properly configured. GitHub Pages will fail to verify the domain otherwise and your site may become unavailable.
+DNS is configured and live. The `CNAME` file at repo root contains `rolegacyai.com`. HTTPS is enforced via GitHub Pages settings.
 
 ---
 
@@ -76,29 +77,24 @@ The discovery cohort form is currently a placeholder. To activate it:
 ## File structure
 
 ```
-rolegacyai-site/
-├── index.html          # Main HTML — all sections and content
-├── styles.css          # All styling — dark theme, responsive, animations
-├── script.js           # Scroll reveal, hero animation, nav behaviour
-├── CNAME               # Custom domain — only include after DNS is ready
-├── README.md           # This file
-└── assets/
-    ├── favicon.svg     # SVG favicon (placeholder)
-    ├── favicon.png     # PNG favicon (placeholder — generate from SVG)
-    └── og-image.png    # Open Graph image for social sharing (placeholder)
+/
+├── index.html                          # Main HTML — all sections and content
+├── styles.css                          # All styling — dark theme, responsive, animations
+├── script.js                           # Scroll reveal, hero animation, nav behaviour
+├── CNAME                               # Custom domain: rolegacyai.com
+├── README.md                           # This file
+├── assets/
+│   └── favicon.svg                     # SVG favicon
+├── docs/
+│   └── ops/
+│       ├── AUTONOMOUS_GIT_WORKFLOW.md  # Workflow rules for connected AI agents
+│       ├── AGENT_RULES.md              # Rules for all implementing agents
+│       ├── REPLIT_EXECUTION_RULES.md   # Replit-specific execution rules
+│       ├── PROJECT_MEMORY_PLAN.md      # Planned context store schema
+│       └── ISSUE_TEMPLATE.md           # Reusable issue template
+└── marketing/
+    └── linkedin-launch-post.md         # Launch post copy
 ```
-
----
-
-## Assets to add
-
-The following placeholder assets should be created before launch:
-
-| File | Dimensions | Notes |
-|------|-----------|-------|
-| `assets/favicon.svg` | — | SVG favicon — can use the logo mark SVG inline in index.html |
-| `assets/favicon.png` | 32×32 / 64×64 | PNG version of favicon |
-| `assets/og-image.png` | 1200×630 | Open Graph social sharing card — dark background, logo, tagline |
 
 ---
 
