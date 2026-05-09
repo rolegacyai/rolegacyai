@@ -1142,6 +1142,10 @@ ul, ol { list-style: none; }
   line-height: 1.6;
 }
 
+.report__body-extra {
+  margin-top: 1rem;
+}
+
 .report__actions {
   display: flex;
   gap: 1rem;
