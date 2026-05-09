@@ -1,0 +1,13 @@
+OG Image placeholder
+
+Create a 1200x630 PNG for social sharing cards with the following spec:
+
+- Background: #0f0f10 (dark charcoal)
+- Logo mark SVG in top-left: the stick figure with amber halo (see favicon.svg)
+- Wordmark: "RolelegacyAI" in Space Grotesk 600 weight, #f4f4f5
+- Tagline: "People move on. The role gets stronger." in Inter 400, #a1a1aa
+- A subtle grain texture overlay
+- Accent: a thin amber (#d4a373) horizontal rule below the wordmark
+- Bottom right: "rolelegacyai.com" in Inter 400, #a1a1aa, small
+
+Save as assets/og-image.png at 1200x630px.
