@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Tenant Security — RolegacyAI</title>
+  <meta name="description" content="How RolegacyAI isolates role memory between organisations, enforces access controls, and maintains the security posture required for enterprise institutional knowledge." />
+  <link rel="canonical" href="https://rolegacyai.com/blog/multi-tenant-security" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Multi-Tenant Security — RolegacyAI" />
+  <meta property="og:description" content="How RolegacyAI isolates role memory between organisations, enforces access controls, and maintains the security posture required for enterprise institutional knowledge." />
+  <meta property="og:url" content="https://rolegacyai.com/blog/multi-tenant-security" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5JPC2N2CP5');
+  </script>
+  <style>
+    .page-hero { padding: 7rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .page-hero__eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+    .page-hero__title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: flex-start; padding: 3.5rem 0 5rem; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; color: var(--amber); }
+    .article-body p { font-size: 1rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 1rem; }
+    .article-body ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .article-body ul li { font-size: 1rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 0.35rem; list-style: disc; }
+    .article-body ul li::marker { color: var(--amber); }
+    .article-aside { position: sticky; top: 5rem; }
+    .aside-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+    .aside-card__title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .aside-card ul { padding: 0; }
+    .aside-card ul li { list-style: none; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .aside-card ul li:last-child { border-bottom: none; }
+    .aside-card ul li a { color: var(--text-sec); transition: color 0.2s; }
+    .aside-card ul li a:hover { color: var(--amber); }
+    .article-cta { background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem; margin: 3rem 0 0; }
+    .article-cta h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .article-cta p { font-size: 0.925rem; color: var(--text-sec); margin-bottom: 1.25rem; }
+    .breadcrumb { padding: 5.5rem 0 0; font-size: 0.8rem; color: var(--text-muted, #71717a); }
+    .breadcrumb a { color: var(--text-muted, #71717a); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--amber); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    @media (max-width: 768px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Primary navigation">
+      <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+        <svg class="nav__logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+          <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__logo-text">RolegacyAI</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/architecture">Architecture</a></li>
+        <li><a href="/blog" aria-current="page">Insights</a></li>
+        <li><a href="/#report">The Report</a></li>
+        <li><a href="/prototype.html">Prototype</a></li>
+        <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="nav__cta">Join Discovery Cohort</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><a href="/blog">Insights</a><span>›</span>Multi-Tenant Security
+      </nav>
+    </div>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Security</p>
+        <h1 class="page-hero__title">Multi-Tenant Security</h1>
+        <p class="page-hero__desc">How RolegacyAI isolates role memory between organisations, enforces access controls, and maintains the security posture required for enterprise institutional knowledge.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-body">
+          <h2>Enterprise Security Requirements</h2>
+<p>Role memory contains some of the most sensitive institutional knowledge an organisation holds: vendor negotiation strategies, internal escalation paths, system vulnerabilities and workarounds, commercially sensitive decisions, and the operational intelligence that drives competitive advantage. The security model for a role memory platform must meet enterprise standards — not as a feature, but as a foundational requirement.</p>
+
+<h2>Tenant Isolation</h2>
+<p>RolegacyAI is architected for strict tenant isolation. Each organisation operates in a completely separate logical environment. Role memories, vector indexes, audit logs, and configuration data are partitioned at the tenant level with no shared data paths between tenants. Tenant isolation is enforced at the data layer, the retrieval layer, and the API layer — ensuring that a query in one organisation's environment cannot surface, leak, or reference data from another.</p>
+
+<h2>Role-Level Access Controls</h2>
+<p>Within a tenant, access to role memory is governed by role-level access controls. The default model is that role memory is accessible to the current holder of the role, to authorised HR and operations personnel, and to designated successors during the transition period. Cross-role access — where a senior leader might need visibility into the risk posture across multiple roles — is a separately authorised access level with its own audit trail.</p>
+<p>Access control lists are configured by the tenant administrator and can be adjusted to match the organisation's existing RBAC model, including integration with Active Directory or other identity providers.</p>
+
+<h2>Encryption</h2>
+<p>Role memory is encrypted at rest using AES-256 and in transit using TLS 1.3. Encryption keys are managed at the tenant level, with support for customer-managed keys for organisations with specific key management requirements. Vector embeddings, memory entries, audit logs, and configuration data are all encrypted independently.</p>
+
+<h2>Compliance Considerations</h2>
+<p>The multi-tenant security model is designed to support compliance with GDPR, UK GDPR, SOC 2 Type II, and ISO 27001 requirements as applicable to the organisation's jurisdiction and industry. Key compliance features include data residency controls (specifying the geographic location of data storage), retention and deletion policies (including the right to erasure for personal data), and audit logging of all data access and processing events.</p>
+
+<h2>Audit Logging</h2>
+<p>Every interaction with the role memory system is logged: who accessed which role's memory, what queries were made, what content was captured, what was sanitised, what was validated, and what was modified. Audit logs are immutable and available for export to SIEM systems. Logs are retained for a configurable period aligned with the organisation's compliance requirements.</p>
+
+          <div class="article-cta">
+            <h3>Preserve role memory before key people move on.</h3>
+            <p>Interested in applying the Multi-Tenant Security approach to your organisation? Register interest in RolegacyAI to join the discovery cohort.</p>
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="btn btn--primary">Register Interest</a>
+          </div>
+        </article>
+
+        <aside class="article-aside">
+          <div class="aside-card">
+            <p class="aside-card__title">Related articles</p>
+            <ul>
+              <li><a href="sanitisation-engine">Sanitisation Engine</a></li>
+            <li><a href="human-validation-loop">Human Validation Loop</a></li>
+            <li><a href="personal-role-layer">Personal Role Layer</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Architecture layers</p>
+            <ul>
+              <li><a href="/architecture">How RolegacyAI Works</a></li>
+              <li><a href="/blog">All 20 articles →</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Download</p>
+            <ul>
+              <li><a href="/content/pdf-articles/11-multi-tenant-security.pdf" download>Original PDF ↓</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+            <svg class="nav__logo-mark" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nav__logo-text">RolegacyAI</span>
+          </a>
+          <p class="footer__tagline">Every role leaves one.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="/architecture">Architecture</a></li>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/prototype.html">Prototype</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort">Discovery cohort</a></li>
+            <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; 2025 RolegacyAI. All rights reserved.</p>
+        <p class="footer__legal footer__legal--right">Role-scoped institutional memory platform &mdash; in discovery</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

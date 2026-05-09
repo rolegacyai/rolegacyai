@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human Validation Loop — RolegacyAI</title>
+  <meta name="description" content="How RolegacyAI involves role holders and subject-matter experts in validating, correcting, and approving AI-extracted memories — keeping the institutional record trustworthy." />
+  <link rel="canonical" href="https://rolegacyai.com/blog/human-validation-loop" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Human Validation Loop — RolegacyAI" />
+  <meta property="og:description" content="How RolegacyAI involves role holders and subject-matter experts in validating, correcting, and approving AI-extracted memories — keeping the institutional record trustworthy." />
+  <meta property="og:url" content="https://rolegacyai.com/blog/human-validation-loop" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5JPC2N2CP5');
+  </script>
+  <style>
+    .page-hero { padding: 7rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .page-hero__eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+    .page-hero__title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: flex-start; padding: 3.5rem 0 5rem; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; color: var(--amber); }
+    .article-body p { font-size: 1rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 1rem; }
+    .article-body ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .article-body ul li { font-size: 1rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 0.35rem; list-style: disc; }
+    .article-body ul li::marker { color: var(--amber); }
+    .article-aside { position: sticky; top: 5rem; }
+    .aside-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+    .aside-card__title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .aside-card ul { padding: 0; }
+    .aside-card ul li { list-style: none; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .aside-card ul li:last-child { border-bottom: none; }
+    .aside-card ul li a { color: var(--text-sec); transition: color 0.2s; }
+    .aside-card ul li a:hover { color: var(--amber); }
+    .article-cta { background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem; margin: 3rem 0 0; }
+    .article-cta h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .article-cta p { font-size: 0.925rem; color: var(--text-sec); margin-bottom: 1.25rem; }
+    .breadcrumb { padding: 5.5rem 0 0; font-size: 0.8rem; color: var(--text-muted, #71717a); }
+    .breadcrumb a { color: var(--text-muted, #71717a); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--amber); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    @media (max-width: 768px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Primary navigation">
+      <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+        <svg class="nav__logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+          <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__logo-text">RolegacyAI</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/architecture">Architecture</a></li>
+        <li><a href="/blog" aria-current="page">Insights</a></li>
+        <li><a href="/#report">The Report</a></li>
+        <li><a href="/prototype.html">Prototype</a></li>
+        <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="nav__cta">Join Discovery Cohort</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><a href="/blog">Insights</a><span>›</span>Human Validation Loop
+      </nav>
+    </div>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Architecture</p>
+        <h1 class="page-hero__title">Human Validation Loop</h1>
+        <p class="page-hero__desc">How RolegacyAI involves role holders and subject-matter experts in validating, correcting, and approving AI-extracted memories — keeping the institutional record trustworthy.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-body">
+          <h2>Why Human Validation Is Non-Negotiable</h2>
+<p>AI extraction from unstructured content is powerful but imperfect. A transcript can be misinterpreted. A decision's nuance can be lost in extraction. A workaround can be captured without the critical context that makes it safe to apply. Organisational knowledge is too consequential for successors to act on without the assurance that it has been reviewed by someone who was there.</p>
+<p>The Human Validation Loop is the mechanism by which RolegacyAI brings human judgment into the memory creation process — not as a bottleneck, but as a trust-building layer that gives the institutional memory the authority it needs to be genuinely useful.</p>
+
+<h2>The Validation Workflow</h2>
+<p>When the capture and classification pipeline produces a new memory candidate — whether from an AI extraction, a document ingestion, or an automated trigger — it follows a validation workflow:</p>
+<ul>
+  <li><strong>Auto-commit:</strong> Entries above a high-confidence threshold from high-reliability sources (formally authored documents, directly inputted role holder entries) are committed to the memory store automatically, with a flag indicating they have not yet been explicitly confirmed.</li>
+  <li><strong>Role holder review queue:</strong> Entries below the high-confidence threshold, or from sources that require verification, are surfaced to the role holder in a review queue. The role holder is shown the extracted entry alongside the source material and asked to confirm, correct, or reject it.</li>
+  <li><strong>SME review:</strong> Entries in domains where the role holder may not be the appropriate reviewer — for example, technical entries that should be reviewed by an architect, or financial entries that should be reviewed by a finance partner — can be routed to a subject-matter expert reviewer.</li>
+</ul>
+
+<h2>Correction and Annotation</h2>
+<p>Reviewers are not limited to approving or rejecting entries. They can correct the content, add context, adjust the classification, update the confidence rating, and annotate the entry with additional information that was not captured in the original extraction. Corrections feed back into the classification model, improving extraction accuracy over time.</p>
+
+<h2>Disagreement Handling</h2>
+<p>Where a reviewer disagrees with an AI-generated entry but the source material supports the original extraction, the disagreement is recorded as an annotation rather than a deletion. This preserves the original capture alongside the correction, enabling future reviewers to see both the raw extraction and the human judgment applied to it.</p>
+
+<h2>Trust Score</h2>
+<p>Validated entries — those explicitly reviewed and confirmed by a role holder or SME — carry a distinct trust marker in the memory store. This marker is surfaced in retrieval outputs, in successor briefs, and in coverage reporting, so users always know whether the information they are receiving has been humanly validated or is still awaiting review.</p>
+
+          <div class="article-cta">
+            <h3>Preserve role memory before key people move on.</h3>
+            <p>Interested in applying the Human Validation Loop approach to your organisation? Register interest in RolegacyAI to join the discovery cohort.</p>
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="btn btn--primary">Register Interest</a>
+          </div>
+        </article>
+
+        <aside class="article-aside">
+          <div class="aside-card">
+            <p class="aside-card__title">Related articles</p>
+            <ul>
+              <li><a href="confidence-scoring">Confidence Scoring</a></li>
+            <li><a href="sanitisation-engine">Sanitisation Engine</a></li>
+            <li><a href="capture-engine">Capture Engine</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Architecture layers</p>
+            <ul>
+              <li><a href="/architecture">How RolegacyAI Works</a></li>
+              <li><a href="/blog">All 20 articles →</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Download</p>
+            <ul>
+              <li><a href="/content/pdf-articles/12-human-validation-loop.pdf" download>Original PDF ↓</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+            <svg class="nav__logo-mark" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nav__logo-text">RolegacyAI</span>
+          </a>
+          <p class="footer__tagline">Every role leaves one.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="/architecture">Architecture</a></li>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/prototype.html">Prototype</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort">Discovery cohort</a></li>
+            <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; 2025 RolegacyAI. All rights reserved.</p>
+        <p class="footer__legal footer__legal--right">Role-scoped institutional memory platform &mdash; in discovery</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

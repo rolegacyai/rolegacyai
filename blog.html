@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RolegacyAI Insights — Successor Readiness and Institutional Memory</title>
+  <meta name="description" content="Practical writing on tribal knowledge loss, role memory, successor readiness, AI uplift capture, and operational continuity." />
+  <link rel="canonical" href="https://rolegacyai.com/blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="RolegacyAI Insights — Successor Readiness and Institutional Memory" />
+  <meta property="og:description" content="Practical writing on tribal knowledge loss, role memory, successor readiness, AI uplift capture, and operational continuity." />
+  <meta property="og:url" content="https://rolegacyai.com/blog" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5JPC2N2CP5');
+  </script>
+  <style>
+    .page-hero { padding: 7rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .page-hero__eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+    .page-hero__title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: flex-start; padding: 3.5rem 0 5rem; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; color: var(--amber); }
+    .article-body p { font-size: 1rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 1rem; }
+    .article-body ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .article-body ul li { font-size: 1rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 0.35rem; list-style: disc; }
+    .article-body ul li::marker { color: var(--amber); }
+    .article-aside { position: sticky; top: 5rem; }
+    .aside-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+    .aside-card__title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .aside-card ul { padding: 0; }
+    .aside-card ul li { list-style: none; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .aside-card ul li:last-child { border-bottom: none; }
+    .aside-card ul li a { color: var(--text-sec); transition: color 0.2s; }
+    .aside-card ul li a:hover { color: var(--amber); }
+    .article-cta { background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem; margin: 3rem 0 0; }
+    .article-cta h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .article-cta p { font-size: 0.925rem; color: var(--text-sec); margin-bottom: 1.25rem; }
+    .breadcrumb { padding: 5.5rem 0 0; font-size: 0.8rem; color: var(--text-muted, #71717a); }
+    .breadcrumb a { color: var(--text-muted, #71717a); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--amber); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    @media (max-width: 768px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Primary navigation">
+      <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+        <svg class="nav__logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+          <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__logo-text">RolegacyAI</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/architecture">Architecture</a></li>
+        <li><a href="/blog" aria-current="page">Insights</a></li>
+        <li><a href="/#report">The Report</a></li>
+        <li><a href="/prototype.html">Prototype</a></li>
+        <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="nav__cta">Join Discovery Cohort</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Insights</p>
+        <h1 class="page-hero__title">RolegacyAI Insights</h1>
+        <p class="page-hero__desc">Practical writing on role memory, successor readiness, operational continuity, workflow intelligence, and preserving the knowledge that keeps work moving.</p>
+      </div>
+    </section>
+
+    <section style="padding: 3rem 0 5rem;">
+      <div class="container">
+        <div class="blog-grid">
+          
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Knowledge Capture</div>
+            <h2 class="blog-card__title"><a href="blog/capture-engine">Capture Engine</a></h2>
+            <p class="blog-card__desc">How RolegacyAI captures role knowledge from documents, meetings, workflows, and structured inputs — and turns it into structured institutional memory.</p>
+            <a href="blog/capture-engine" class="blog-card__link" aria-label="Read Capture Engine">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/classification-engine">Classification Engine</a></h2>
+            <p class="blog-card__desc">How RolegacyAI classifies captured role knowledge into a structured taxonomy — decisions, lessons, workarounds, processes, relationships, and more.</p>
+            <a href="blog/classification-engine" class="blog-card__link" aria-label="Read Classification Engine">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Security</div>
+            <h2 class="blog-card__title"><a href="blog/sanitisation-engine">Sanitisation Engine</a></h2>
+            <p class="blog-card__desc">How RolegacyAI separates institutional knowledge from personal information, removes sensitive content, and ensures role memory is safe to store and share.</p>
+            <a href="blog/sanitisation-engine" class="blog-card__link" aria-label="Read Sanitisation Engine">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/personal-role-layer">Personal Role Layer</a></h2>
+            <p class="blog-card__desc">The technical and conceptual boundary between a role holder's personal knowledge and the institutional knowledge that belongs to the role — and how RolegacyAI manages it.</p>
+            <a href="blog/personal-role-layer" class="blog-card__link" aria-label="Read Personal Role Layer">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/rag-engine">RAG Engine</a></h2>
+            <p class="blog-card__desc">How RolegacyAI uses Retrieval Augmented Generation to surface relevant role memories in context — powering the successor brief, AI assistant, and onboarding tools.</p>
+            <a href="blog/rag-engine" class="blog-card__link" aria-label="Read RAG Engine">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Scoring</div>
+            <h2 class="blog-card__title"><a href="blog/confidence-scoring">Confidence Scoring</a></h2>
+            <p class="blog-card__desc">How RolegacyAI scores confidence in each memory entry based on source reliability, corroboration, recency, and human validation — and how that score drives review and retrieval.</p>
+            <a href="blog/confidence-scoring" class="blog-card__link" aria-label="Read Confidence Scoring">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Scoring</div>
+            <h2 class="blog-card__title"><a href="blog/coverage-scoring">Coverage Scoring</a></h2>
+            <p class="blog-card__desc">How RolegacyAI measures how completely a role's knowledge domains are documented — and uses gap identification to improve successor readiness.</p>
+            <a href="blog/coverage-scoring" class="blog-card__link" aria-label="Read Coverage Scoring">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Successor Readiness</div>
+            <h2 class="blog-card__title"><a href="blog/successor-brief-generator">Successor Brief Generator</a></h2>
+            <p class="blog-card__desc">How RolegacyAI generates the structured handoff document that a successor inherits when they take over a role — and what makes it different from a generic AI summary.</p>
+            <a href="blog/successor-brief-generator" class="blog-card__link" aria-label="Read Successor Brief Generator">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Scoring</div>
+            <h2 class="blog-card__title"><a href="blog/role-risk-score">Role Risk Score</a></h2>
+            <p class="blog-card__desc">How RolegacyAI calculates the knowledge continuity risk for any role — and how organisations use it to prioritise where to invest in memory capture before it's too late.</p>
+            <a href="blog/role-risk-score" class="blog-card__link" aria-label="Read Role Risk Score">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">AI Uplift</div>
+            <h2 class="blog-card__title"><a href="blog/ai-uplift-measurement">AI Uplift Measurement</a></h2>
+            <p class="blog-card__desc">How RolegacyAI measures the efficiency and capability improvements that AI tools create at the role level — making the invisible visible and preserving the improvement for successors.</p>
+            <a href="blog/ai-uplift-measurement" class="blog-card__link" aria-label="Read AI Uplift Measurement">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Security</div>
+            <h2 class="blog-card__title"><a href="blog/multi-tenant-security">Multi-Tenant Security</a></h2>
+            <p class="blog-card__desc">How RolegacyAI isolates role memory between organisations, enforces access controls, and maintains the security posture required for enterprise institutional knowledge.</p>
+            <a href="blog/multi-tenant-security" class="blog-card__link" aria-label="Read Multi-Tenant Security">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/human-validation-loop">Human Validation Loop</a></h2>
+            <p class="blog-card__desc">How RolegacyAI involves role holders and subject-matter experts in validating, correcting, and approving AI-extracted memories — keeping the institutional record trustworthy.</p>
+            <a href="blog/human-validation-loop" class="blog-card__link" aria-label="Read Human Validation Loop">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/knowledge-graph">Knowledge Graph</a></h2>
+            <p class="blog-card__desc">How RolegacyAI connects role memories through a structured knowledge graph — enabling relationship traversal, pattern discovery, and richer context for successor briefing.</p>
+            <a href="blog/knowledge-graph" class="blog-card__link" aria-label="Read Knowledge Graph">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Workflow Intelligence</div>
+            <h2 class="blog-card__title"><a href="blog/agentic-workflows">Agentic Workflows</a></h2>
+            <p class="blog-card__desc">How autonomous agents can use RolegacyAI role memory to complete onboarding tasks, answer successor questions, coordinate transitions, and fill knowledge gaps.</p>
+            <a href="blog/agentic-workflows" class="blog-card__link" aria-label="Read Agentic Workflows">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/deduplication-engine">Deduplication Engine</a></h2>
+            <p class="blog-card__desc">How RolegacyAI detects, merges, and reconciles duplicate or near-duplicate role memory entries to keep the institutional memory clean, coherent, and trustworthy.</p>
+            <a href="blog/deduplication-engine" class="blog-card__link" aria-label="Read Deduplication Engine">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Integrations</div>
+            <h2 class="blog-card__title"><a href="blog/api-integrations">API Integrations</a></h2>
+            <p class="blog-card__desc">How RolegacyAI connects to the enterprise tools where role knowledge lives — enabling capture, trigger-based workflows, and role memory consumption across the stack.</p>
+            <a href="blog/api-integrations" class="blog-card__link" aria-label="Read API Integrations">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Architecture</div>
+            <h2 class="blog-card__title"><a href="blog/vector-embeddings">Vector Embeddings</a></h2>
+            <p class="blog-card__desc">How RolegacyAI encodes role memories as vector embeddings to enable semantic search, similarity detection, and context-aware retrieval across the institutional memory store.</p>
+            <a href="blog/vector-embeddings" class="blog-card__link" aria-label="Read Vector Embeddings">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Knowledge Capture</div>
+            <h2 class="blog-card__title"><a href="blog/memory-timeline">Memory Timeline</a></h2>
+            <p class="blog-card__desc">How RolegacyAI organises role memories chronologically — providing a navigable history of decisions, transitions, and institutional learning across every holder of a role.</p>
+            <a href="blog/memory-timeline" class="blog-card__link" aria-label="Read Memory Timeline">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">Successor Readiness</div>
+            <h2 class="blog-card__title"><a href="blog/successor-readiness-score">Successor Readiness Score</a></h2>
+            <p class="blog-card__desc">The composite score that measures how ready a role is for transition — combining coverage, confidence, brief completeness, and knowledge transfer progress into a single operational metric.</p>
+            <a href="blog/successor-readiness-score" class="blog-card__link" aria-label="Read Successor Readiness Score">Read article →</a>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__cat">AI Uplift</div>
+            <h2 class="blog-card__title"><a href="blog/prompt-engineering">Prompt Engineering</a></h2>
+            <p class="blog-card__desc">How RolegacyAI approaches prompt engineering for role memory tasks — from capture and classification to successor brief generation — and how prompt libraries are captured and transferred.</p>
+            <a href="blog/prompt-engineering" class="blog-card__link" aria-label="Read Prompt Engineering">Read article →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .blog-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; transition: border-color 0.2s, transform 0.2s; }
+    .blog-card:hover { border-color: rgba(212,163,115,0.25); transform: translateY(-2px); }
+    .blog-card__cat { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); }
+    .blog-card__title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+    .blog-card__title a { color: var(--text-primary); transition: color 0.2s; }
+    .blog-card__title a:hover { color: var(--amber); }
+    .blog-card__desc { font-size: 0.85rem; color: var(--text-sec); line-height: 1.6; flex: 1; }
+    .blog-card__link { font-size: 0.8rem; color: var(--amber); font-weight: 500; margin-top: 0.25rem; transition: color 0.2s; }
+    .blog-card__link:hover { color: var(--gold); }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+            <svg class="nav__logo-mark" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nav__logo-text">RolegacyAI</span>
+          </a>
+          <p class="footer__tagline">Every role leaves one.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="/architecture">Architecture</a></li>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/prototype.html">Prototype</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort">Discovery cohort</a></li>
+            <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; 2025 RolegacyAI. All rights reserved.</p>
+        <p class="footer__legal footer__legal--right">Role-scoped institutional memory platform &mdash; in discovery</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

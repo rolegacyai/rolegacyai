@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Successor Readiness Score — RolegacyAI</title>
+  <meta name="description" content="The composite score that measures how ready a role is for transition — combining coverage, confidence, brief completeness, and knowledge transfer progress into a single operational metric." />
+  <link rel="canonical" href="https://rolegacyai.com/blog/successor-readiness-score" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Successor Readiness Score — RolegacyAI" />
+  <meta property="og:description" content="The composite score that measures how ready a role is for transition — combining coverage, confidence, brief completeness, and knowledge transfer progress into a single operational metric." />
+  <meta property="og:url" content="https://rolegacyai.com/blog/successor-readiness-score" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5JPC2N2CP5');
+  </script>
+  <style>
+    .page-hero { padding: 7rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .page-hero__eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+    .page-hero__title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: flex-start; padding: 3.5rem 0 5rem; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; color: var(--amber); }
+    .article-body p { font-size: 1rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 1rem; }
+    .article-body ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .article-body ul li { font-size: 1rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 0.35rem; list-style: disc; }
+    .article-body ul li::marker { color: var(--amber); }
+    .article-aside { position: sticky; top: 5rem; }
+    .aside-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+    .aside-card__title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .aside-card ul { padding: 0; }
+    .aside-card ul li { list-style: none; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .aside-card ul li:last-child { border-bottom: none; }
+    .aside-card ul li a { color: var(--text-sec); transition: color 0.2s; }
+    .aside-card ul li a:hover { color: var(--amber); }
+    .article-cta { background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem; margin: 3rem 0 0; }
+    .article-cta h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .article-cta p { font-size: 0.925rem; color: var(--text-sec); margin-bottom: 1.25rem; }
+    .breadcrumb { padding: 5.5rem 0 0; font-size: 0.8rem; color: var(--text-muted, #71717a); }
+    .breadcrumb a { color: var(--text-muted, #71717a); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--amber); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    @media (max-width: 768px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Primary navigation">
+      <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+        <svg class="nav__logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+          <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__logo-text">RolegacyAI</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/architecture">Architecture</a></li>
+        <li><a href="/blog" aria-current="page">Insights</a></li>
+        <li><a href="/#report">The Report</a></li>
+        <li><a href="/prototype.html">Prototype</a></li>
+        <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="nav__cta">Join Discovery Cohort</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><a href="/blog">Insights</a><span>›</span>Successor Readiness Score
+      </nav>
+    </div>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Successor Readiness</p>
+        <h1 class="page-hero__title">Successor Readiness Score</h1>
+        <p class="page-hero__desc">The composite score that measures how ready a role is for transition — combining coverage, confidence, brief completeness, and knowledge transfer progress into a single operational metric.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-body">
+          <h2>One Score, Many Inputs</h2>
+<p>Successor readiness is not a single thing. It is the product of many factors: how comprehensively the role's knowledge has been captured, how confident the captured knowledge is, how well the successor brief has been assembled, and how much of the critical knowledge has been actively transferred to the incoming holder. The Successor Readiness Score combines these factors into a single metric that gives HR, operations leaders, and transition managers a clear view of where a role transition stands.</p>
+
+<h2>Score Components</h2>
+<p>The Successor Readiness Score is built from five weighted components:</p>
+<ul>
+  <li><strong>Coverage score:</strong> The breadth dimension — how many of the role's key knowledge domains have been documented. A role with significant undocumented domains cannot be considered ready for transition regardless of how good the captured knowledge is.</li>
+  <li><strong>Confidence score distribution:</strong> The depth dimension — the average and minimum confidence scores across the captured knowledge. High-coverage, low-confidence knowledge is not sufficient; the captured knowledge must be validated and trustworthy.</li>
+  <li><strong>Successor brief completeness:</strong> Has a brief been generated? Has it been reviewed by the outgoing holder? Are there sections flagged as incomplete or requiring verification? Brief completeness contributes to readiness because it is the vehicle through which the accumulated memory is made accessible to the successor.</li>
+  <li><strong>Critical workaround capture:</strong> Workarounds are disproportionately valuable to successors because they represent knowledge that is almost never formally documented and causes operational failures when it is missing. A role with active workarounds that are not yet captured in the memory store carries a readiness penalty regardless of other scores.</li>
+  <li><strong>Knowledge transfer progress:</strong> During an active transition, RolegacyAI tracks whether key knowledge exchanges between the outgoing holder and the incoming successor have occurred — whether handover sessions have been logged, whether the successor has accessed and engaged with the brief, and whether the successor has raised questions that indicate they have absorbed the critical knowledge.</li>
+</ul>
+
+<h2>Readiness Bands</h2>
+<p>The composite score is mapped to readiness bands: Not Ready, Partially Ready, Ready with Gaps, and Transition Ready. Bands trigger different recommended actions — a Not Ready role initiates an urgent capture campaign, a Partially Ready role gets a targeted gap-filling plan, a Ready with Gaps role gets flagged sections highlighted for the successor to verify, and a Transition Ready role proceeds to handoff with confidence.</p>
+
+<h2>Progression Over Time</h2>
+<p>The Successor Readiness Score is tracked over time, not just at a single point. As capture progresses, confidence improves, and knowledge transfer occurs, the score rises. Organisations can set a readiness threshold that must be achieved before a transition date — and track whether the role is on track to reach that threshold given the current rate of improvement.</p>
+
+          <div class="article-cta">
+            <h3>Preserve role memory before key people move on.</h3>
+            <p>Interested in applying the Successor Readiness Score approach to your organisation? Register interest in RolegacyAI to join the discovery cohort.</p>
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="btn btn--primary">Register Interest</a>
+          </div>
+        </article>
+
+        <aside class="article-aside">
+          <div class="aside-card">
+            <p class="aside-card__title">Related articles</p>
+            <ul>
+              <li><a href="coverage-scoring">Coverage Scoring</a></li>
+            <li><a href="successor-brief-generator">Successor Brief Generator</a></li>
+            <li><a href="role-risk-score">Role Risk Score</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Architecture layers</p>
+            <ul>
+              <li><a href="/architecture">How RolegacyAI Works</a></li>
+              <li><a href="/blog">All 20 articles →</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Download</p>
+            <ul>
+              <li><a href="/content/pdf-articles/19-successor-readiness-score.pdf" download>Original PDF ↓</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+            <svg class="nav__logo-mark" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nav__logo-text">RolegacyAI</span>
+          </a>
+          <p class="footer__tagline">Every role leaves one.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="/architecture">Architecture</a></li>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/prototype.html">Prototype</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort">Discovery cohort</a></li>
+            <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; 2025 RolegacyAI. All rights reserved.</p>
+        <p class="footer__legal footer__legal--right">Role-scoped institutional memory platform &mdash; in discovery</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

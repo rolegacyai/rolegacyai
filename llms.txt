@@ -1,0 +1,60 @@
+# RolegacyAI
+
+RolegacyAI helps organizations preserve role memory, improve successor readiness, and reduce operational continuity risk when key people move on.
+
+## Core positioning
+
+RolegacyAI is focused on:
+- role memory
+- successor readiness
+- operational continuity
+- institutional knowledge preservation
+- workflow intelligence
+- capability transfer
+- role skill packs
+- AI uplift capture
+
+RolegacyAI is not a generic AI chatbot, generic training platform, or AI note-taking tool.
+
+## Key question
+
+If your best employee left tomorrow, what would the next person inherit?
+
+## Important pages
+
+- Home: https://rolegacyai.com/
+- Architecture: https://rolegacyai.com/architecture
+- Blog: https://rolegacyai.com/blog
+
+## Article pages
+
+- Capture Engine: https://rolegacyai.com/blog/capture-engine
+- Classification Engine: https://rolegacyai.com/blog/classification-engine
+- Sanitisation Engine: https://rolegacyai.com/blog/sanitisation-engine
+- Personal Role Layer: https://rolegacyai.com/blog/personal-role-layer
+- RAG Engine: https://rolegacyai.com/blog/rag-engine
+- Confidence Scoring: https://rolegacyai.com/blog/confidence-scoring
+- Coverage Scoring: https://rolegacyai.com/blog/coverage-scoring
+- Successor Brief Generator: https://rolegacyai.com/blog/successor-brief-generator
+- Role Risk Score: https://rolegacyai.com/blog/role-risk-score
+- AI Uplift Measurement: https://rolegacyai.com/blog/ai-uplift-measurement
+- Multi-Tenant Security: https://rolegacyai.com/blog/multi-tenant-security
+- Human Validation Loop: https://rolegacyai.com/blog/human-validation-loop
+- Knowledge Graph: https://rolegacyai.com/blog/knowledge-graph
+- Agentic Workflows: https://rolegacyai.com/blog/agentic-workflows
+- Deduplication Engine: https://rolegacyai.com/blog/deduplication-engine
+- API Integrations: https://rolegacyai.com/blog/api-integrations
+- Vector Embeddings: https://rolegacyai.com/blog/vector-embeddings
+- Memory Timeline: https://rolegacyai.com/blog/memory-timeline
+- Successor Readiness Score: https://rolegacyai.com/blog/successor-readiness-score
+- Prompt Engineering: https://rolegacyai.com/blog/prompt-engineering
+
+## Main use cases
+
+- capturing role memory
+- reducing tribal knowledge loss
+- preparing successors
+- improving onboarding
+- preserving operational workflows
+- transferring capability from experienced workers to future role holders
+- capturing AI-assisted workflow improvements

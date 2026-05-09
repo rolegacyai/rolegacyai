@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role Risk Score — RolegacyAI</title>
+  <meta name="description" content="How RolegacyAI calculates the knowledge continuity risk for any role — and how organisations use it to prioritise where to invest in memory capture before it's too late." />
+  <link rel="canonical" href="https://rolegacyai.com/blog/role-risk-score" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Role Risk Score — RolegacyAI" />
+  <meta property="og:description" content="How RolegacyAI calculates the knowledge continuity risk for any role — and how organisations use it to prioritise where to invest in memory capture before it's too late." />
+  <meta property="og:url" content="https://rolegacyai.com/blog/role-risk-score" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5JPC2N2CP5');
+  </script>
+  <style>
+    .page-hero { padding: 7rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .page-hero__eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+    .page-hero__title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: flex-start; padding: 3.5rem 0 5rem; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; color: var(--amber); }
+    .article-body p { font-size: 1rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 1rem; }
+    .article-body ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .article-body ul li { font-size: 1rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 0.35rem; list-style: disc; }
+    .article-body ul li::marker { color: var(--amber); }
+    .article-aside { position: sticky; top: 5rem; }
+    .aside-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+    .aside-card__title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .aside-card ul { padding: 0; }
+    .aside-card ul li { list-style: none; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .aside-card ul li:last-child { border-bottom: none; }
+    .aside-card ul li a { color: var(--text-sec); transition: color 0.2s; }
+    .aside-card ul li a:hover { color: var(--amber); }
+    .article-cta { background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem; margin: 3rem 0 0; }
+    .article-cta h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .article-cta p { font-size: 0.925rem; color: var(--text-sec); margin-bottom: 1.25rem; }
+    .breadcrumb { padding: 5.5rem 0 0; font-size: 0.8rem; color: var(--text-muted, #71717a); }
+    .breadcrumb a { color: var(--text-muted, #71717a); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--amber); }
+    .breadcrumb span { margin: 0 0.4rem; }
+    @media (max-width: 768px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-aside { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Primary navigation">
+      <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+        <svg class="nav__logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+          <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__logo-text">RolegacyAI</span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="/architecture">Architecture</a></li>
+        <li><a href="/blog" aria-current="page">Insights</a></li>
+        <li><a href="/#report">The Report</a></li>
+        <li><a href="/prototype.html">Prototype</a></li>
+        <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="nav__cta">Join Discovery Cohort</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><a href="/blog">Insights</a><span>›</span>Role Risk Score
+      </nav>
+    </div>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Scoring</p>
+        <h1 class="page-hero__title">Role Risk Score</h1>
+        <p class="page-hero__desc">How RolegacyAI calculates the knowledge continuity risk for any role — and how organisations use it to prioritise where to invest in memory capture before it's too late.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-body">
+          <h2>The Risk of Waiting</h2>
+<p>Most organisations only think about knowledge continuity when someone announces they are leaving. By that point, the outgoing role holder is typically distracted, time is short, and the depth of capture that is achievable in a few weeks is a fraction of what could have been accumulated over months or years.</p>
+<p>The Role Risk Score is designed to move this thinking earlier. It calculates the current knowledge continuity risk for every role in scope — so organisations can prioritise capture investment before a transition is imminent, not after it is announced.</p>
+
+<h2>Risk Factors</h2>
+<p>The Role Risk Score is a composite metric built from multiple risk signals:</p>
+<ul>
+  <li><strong>Coverage score:</strong> Roles with low coverage — significant knowledge domains that are undocumented — carry higher risk. A role transition with low coverage means the successor inherits significant blind spots.</li>
+  <li><strong>Confidence score distribution:</strong> A role with many low-confidence entries is more risky than one where the captured knowledge is well-validated, even if the entry count is similar.</li>
+  <li><strong>Holder tenure:</strong> Long-tenured role holders carry more accumulated institutional knowledge. The longer the tenure, the larger the potential knowledge loss if the role is not well-documented before transition.</li>
+  <li><strong>Memory age:</strong> Roles where memory entries have not been updated or reviewed recently carry higher risk — the institutional knowledge may have drifted from the documented state as the role evolved.</li>
+  <li><strong>Transition indicators:</strong> Where available, signals that a transition may be approaching — such as reported succession planning, role restructuring, or organisational change — are factored into the risk calculation.</li>
+  <li><strong>Role criticality:</strong> Roles with higher operational impact — more dependencies, larger budgets, wider stakeholder reach — receive a risk multiplier that reflects the greater consequence of knowledge loss.</li>
+</ul>
+
+<h2>Risk Bands and Alerts</h2>
+<p>The Role Risk Score is expressed as a numerical score and mapped to risk bands: Critical, High, Medium, and Low. Critical and High-risk roles trigger configurable alerts — to HR, to operations leadership, or to the role holder directly — recommending immediate capture investment. Organisations can configure alert thresholds, notification channels, and escalation paths based on their own governance requirements.</p>
+
+<h2>Executive and Portfolio View</h2>
+<p>Risk scores are aggregated into a portfolio view that gives HR, operations leadership, and executive sponsors visibility into the organisation's overall knowledge continuity risk position. This view surfaces where the greatest institutional knowledge vulnerabilities sit, enabling proactive investment in capture and documentation before the cost of transition failure is incurred.</p>
+
+          <div class="article-cta">
+            <h3>Preserve role memory before key people move on.</h3>
+            <p>Interested in applying the Role Risk Score approach to your organisation? Register interest in RolegacyAI to join the discovery cohort.</p>
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort" class="btn btn--primary">Register Interest</a>
+          </div>
+        </article>
+
+        <aside class="article-aside">
+          <div class="aside-card">
+            <p class="aside-card__title">Related articles</p>
+            <ul>
+              <li><a href="coverage-scoring">Coverage Scoring</a></li>
+            <li><a href="successor-readiness-score">Successor Readiness Score</a></li>
+            <li><a href="confidence-scoring">Confidence Scoring</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Architecture layers</p>
+            <ul>
+              <li><a href="/architecture">How RolegacyAI Works</a></li>
+              <li><a href="/blog">All 20 articles →</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <p class="aside-card__title">Download</p>
+            <ul>
+              <li><a href="/content/pdf-articles/09-role-risk-score.pdf" download>Original PDF ↓</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+            <svg class="nav__logo-mark" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nav__logo-text">RolegacyAI</span>
+          </a>
+          <p class="footer__tagline">Every role leaves one.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="/architecture">Architecture</a></li>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/prototype.html">Prototype</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Discovery%20Cohort">Discovery cohort</a></li>
+            <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; 2025 RolegacyAI. All rights reserved.</p>
+        <p class="footer__legal footer__legal--right">Role-scoped institutional memory platform &mdash; in discovery</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
