@@ -20,12 +20,33 @@ RolegacyAI is not a generic AI chatbot, generic training platform, or AI note-ta
 
 If your best employee left tomorrow, what would the next person inherit?
 
-## Important pages
+## Important pages — English
 
 - Home: https://rolegacyai.com/
 - Story: https://rolegacyai.com/story
 - Architecture: https://rolegacyai.com/architecture
 - Blog: https://rolegacyai.com/blog
+
+## Important pages — Chinese Simplified (简体中文)
+
+- 首页: https://rolegacyai.com/zh/
+- 故事: https://rolegacyai.com/zh/story/
+- 架构: https://rolegacyai.com/zh/architecture/
+- 洞察: https://rolegacyai.com/zh/blog/
+
+## Important pages — Hindi (हिन्दी)
+
+- होम: https://rolegacyai.com/hi/
+- कहानी: https://rolegacyai.com/hi/story/
+- संरचना: https://rolegacyai.com/hi/architecture/
+- अंतर्दृष्टि: https://rolegacyai.com/hi/blog/
+
+## Important pages — Marathi (मराठी)
+
+- होम: https://rolegacyai.com/mr/
+- कथा: https://rolegacyai.com/mr/story/
+- संरचना: https://rolegacyai.com/mr/architecture/
+- अंतर्दृष्टी: https://rolegacyai.com/mr/blog/
 
 ## Story page
 
