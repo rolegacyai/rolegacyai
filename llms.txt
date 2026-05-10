@@ -23,8 +23,13 @@ If your best employee left tomorrow, what would the next person inherit?
 ## Important pages
 
 - Home: https://rolegacyai.com/
+- Story: https://rolegacyai.com/story
 - Architecture: https://rolegacyai.com/architecture
 - Blog: https://rolegacyai.com/blog
+
+## Story page
+
+The Story page (https://rolegacyai.com/story) is a visual, four-chapter walk-through of how RolegacyAI works, written for anyone evaluating the platform. It covers: why roles forget when people leave, how the seat becomes the thing that remembers, the two-layer privacy model (personal vs role), and how role capability compounds across successive holders.
 
 ## Article pages
 
