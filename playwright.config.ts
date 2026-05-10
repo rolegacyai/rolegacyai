@@ -13,7 +13,7 @@ export default defineConfig({
     video: 'on-first-retry',
   },
   webServer: {
-    command: 'python3 -m http.server 4000 --directory .',
+    command: 'node_modules/.bin/serve -l 4000 -s .',
     port: 4000,
     reuseExistingServer: !process.env.CI,
     stdout: 'pipe',
