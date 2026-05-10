@@ -238,157 +238,6 @@
   });
 })();
 
-// ─── HERO BADGES + CONTINUITY RISK VISUAL ───────────────────────────────────
-(function initHeroTrustAndRiskVisual() {
-  function ensureStyles() {
-    if (document.getElementById('rolegacy-trust-risk-style')) return;
-    const style = document.createElement('style');
-    style.id = 'rolegacy-trust-risk-style';
-    style.textContent = `
-      .hero__trust-row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.65rem;
-        margin: 0.85rem 0 0;
-      }
-      .hero__patent-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        padding: 0.42rem 0.72rem;
-        border: 1px solid rgba(212, 163, 115, 0.42);
-        border-radius: 999px;
-        background: linear-gradient(135deg, rgba(212, 163, 115, 0.14), rgba(242, 193, 78, 0.06));
-        color: var(--amber, #d4a373);
-        font-family: var(--font-head, system-ui, sans-serif);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        box-shadow: 0 10px 30px rgba(212, 163, 115, 0.09);
-      }
-      .hero__patent-badge svg {
-        width: 0.9rem;
-        height: 0.9rem;
-        flex-shrink: 0;
-      }
-      .continuity-risk-stick {
-        position: absolute;
-        right: clamp(0.75rem, 2vw, 1.4rem);
-        bottom: clamp(1rem, 4vw, 2.25rem);
-        width: min(190px, 42vw);
-        z-index: 4;
-        pointer-events: none;
-        filter: drop-shadow(0 22px 35px rgba(0,0,0,0.34));
-        opacity: 0.96;
-      }
-      .risk-stick__fuse-glow,
-      .risk-stick__spark {
-        animation: riskFusePulse 0.9s ease-in-out infinite alternate;
-        transform-origin: center;
-      }
-      .risk-stick__tick {
-        animation: riskTick 1.15s steps(2, end) infinite;
-      }
-      @keyframes riskFusePulse {
-        from { opacity: 0.45; transform: scale(0.92); }
-        to { opacity: 1; transform: scale(1.08); }
-      }
-      @keyframes riskTick {
-        0%, 49% { opacity: 0.35; }
-        50%, 100% { opacity: 1; }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .risk-stick__fuse-glow,
-        .risk-stick__spark,
-        .risk-stick__tick {
-          animation: none;
-        }
-      }
-      @media (max-width: 760px) {
-        .continuity-risk-stick {
-          position: relative;
-          right: auto;
-          bottom: auto;
-          display: block;
-          margin: 1rem auto 0;
-          width: min(180px, 70vw);
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  function addPatentBadge() {
-    const heroText = document.querySelector('.hero__text');
-    const eyebrow = document.querySelector('.hero__eyebrow');
-    if (!heroText || !eyebrow || heroText.querySelector('.hero__patent-badge')) return;
-
-    const trustRow = document.createElement('div');
-    trustRow.className = 'hero__trust-row reveal reveal--delay-1';
-    trustRow.innerHTML = `
-      <span class="hero__patent-badge" aria-label="Patent Pending">
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M8 1.5l5 2.1v3.8c0 3.2-2 5.9-5 7.1-3-1.2-5-3.9-5-7.1V3.6l5-2.1z" stroke="currentColor" stroke-width="1.2"/>
-          <path d="M5.6 8.1l1.5 1.5 3.4-3.7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Patent Pending
-      </span>
-    `;
-    eyebrow.insertAdjacentElement('afterend', trustRow);
-  }
-
-  function addContinuityRiskVisual() {
-    const visual = document.querySelector('.hero__visual');
-    if (!visual || visual.querySelector('.continuity-risk-stick')) return;
-
-    if (getComputedStyle(visual).position === 'static') {
-      visual.style.position = 'relative';
-    }
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'continuity-risk-stick';
-    wrapper.setAttribute('aria-label', 'Cartoon ticking continuity risk visual');
-    wrapper.innerHTML = `
-      <svg viewBox="0 0 220 112" fill="none" role="img" aria-hidden="true">
-        <defs>
-          <linearGradient id="riskStickBody" x1="18" y1="30" x2="166" y2="76" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#7f1d1d"/>
-            <stop offset="0.52" stop-color="#b91c1c"/>
-            <stop offset="1" stop-color="#ef4444"/>
-          </linearGradient>
-          <radialGradient id="riskSpark" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(186 28) rotate(90) scale(21)">
-            <stop stop-color="#fef3c7"/>
-            <stop offset="0.45" stop-color="#f59e0b"/>
-            <stop offset="1" stop-color="#ef4444" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <ellipse cx="91" cy="88" rx="74" ry="12" fill="#000" opacity="0.25"/>
-        <rect x="24" y="36" width="138" height="42" rx="18" fill="url(#riskStickBody)" stroke="#fecaca" stroke-opacity="0.28" stroke-width="1.4"/>
-        <rect x="36" y="39" width="14" height="36" rx="6" fill="#fecaca" opacity="0.2"/>
-        <rect x="134" y="39" width="14" height="36" rx="6" fill="#450a0a" opacity="0.32"/>
-        <text x="92" y="63" text-anchor="middle" fill="#fff7ed" font-family="Space Grotesk, Inter, sans-serif" font-size="18" font-weight="700" letter-spacing="2">RISK</text>
-        <path d="M158 49 C174 41 169 28 185 25" stroke="#a3a3a3" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 5"/>
-        <circle class="risk-stick__fuse-glow" cx="187" cy="25" r="18" fill="url(#riskSpark)"/>
-        <path class="risk-stick__spark" d="M187 10v9M187 31v9M172 25h9M193 25h9M176 14l6 6M192 30l6 6M198 14l-6 6M182 30l-6 6" stroke="#facc15" stroke-width="2" stroke-linecap="round"/>
-        <g class="risk-stick__tick" opacity="0.9">
-          <circle cx="47" cy="26" r="4" fill="#f2c14e"/>
-          <circle cx="59" cy="24" r="2.5" fill="#d4a373"/>
-          <circle cx="70" cy="27" r="2" fill="#f2c14e"/>
-        </g>
-      </svg>
-    `;
-    visual.appendChild(wrapper);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    ensureStyles();
-    addPatentBadge();
-    addContinuityRiskVisual();
-  });
-})();
-
 // ─── FOOTER YEAR ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('footer-year');
@@ -610,7 +459,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ─── PATENT PENDING MODAL ────────────────────────────────────────────────────
-(function initPatentModal() {
+// NOTE: #patent-modal sits after <script src="script.js"> in the HTML, so the
+// element is not yet parsed when this script runs synchronously.  Wrapping in
+// DOMContentLoaded ensures all elements exist before we query them.
+document.addEventListener('DOMContentLoaded', function initPatentModal() {
   const modal = document.getElementById('patent-modal');
   if (!modal) return;
 
@@ -639,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && !modal.hidden) closeModal();
   });
-})();
+});
 
 // ─── ACTIVE NAV LINK ─────────────────────────────────────────────────────────
 (function initActiveNav() {
