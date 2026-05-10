@@ -17,7 +17,7 @@ test.describe('Navigation', () => {
   test('mobile menu toggle opens nav links', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
-    await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('networkidle');
     const toggle = page.locator('.nav__menu-toggle');
     await toggle.click();
     await expect(page.locator('.nav__links')).toHaveClass(/open/);
@@ -27,7 +27,7 @@ test.describe('Navigation', () => {
   test('mobile menu toggle closes nav links', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
-    await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('networkidle');
     const toggle = page.locator('.nav__menu-toggle');
     await toggle.click();
     await toggle.click();

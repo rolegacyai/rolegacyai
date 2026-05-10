@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Story Page', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/story.html');
-    await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('load');
   });
 
   test('story page loads with correct title', async ({ page }) => {
@@ -21,7 +21,7 @@ test.describe('Story Page', () => {
 
   test('a link back to homepage or overview tab exists', async ({ page }) => {
     const backLink = page.locator(
-      'a[href="index.html"], a[href="/"], a[href="./"], a[href="."], .view-toggle__tab'
+      'a[href="/"], a[href="index.html"], a[href="./"], a[href="."], .view-toggle__tab'
     );
     await expect(backLink.first()).toBeVisible();
   });

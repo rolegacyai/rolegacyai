@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Homepage', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('load');
   });
 
   test('homepage loads successfully', async ({ page }) => {
@@ -36,7 +36,7 @@ test.describe('Homepage', () => {
   });
 
   test('no standalone RISK SVG text on page', async ({ page }) => {
-    const riskTexts = await page.locator('svg text').allInnerTexts();
+    const riskTexts = (await page.locator('svg text').allInnerTexts()).filter(Boolean);
     const hasRiskVisual = riskTexts.some(t => t.trim() === 'RISK');
     expect(hasRiskVisual).toBe(false);
   });

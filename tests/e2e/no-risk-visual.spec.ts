@@ -51,7 +51,7 @@ test.describe('No Risk Visual', () => {
   });
 
   test('no standalone RISK text in SVG elements', async ({ page }) => {
-    const svgTexts = await page.locator('svg text').allInnerTexts();
+    const svgTexts = (await page.locator('svg text').allInnerTexts()).filter(Boolean);
     const hasRisk = svgTexts.some(t => t.trim() === 'RISK');
     expect(hasRisk).toBe(false);
   });
