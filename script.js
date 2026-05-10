@@ -459,7 +459,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ─── PATENT PENDING MODAL ────────────────────────────────────────────────────
-(function initPatentModal() {
+// NOTE: #patent-modal sits after <script src="script.js"> in the HTML, so the
+// element is not yet parsed when this script runs synchronously.  Wrapping in
+// DOMContentLoaded ensures all elements exist before we query them.
+document.addEventListener('DOMContentLoaded', function initPatentModal() {
   const modal = document.getElementById('patent-modal');
   if (!modal) return;
 
@@ -488,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && !modal.hidden) closeModal();
   });
-})();
+});
 
 // ─── ACTIVE NAV LINK ─────────────────────────────────────────────────────────
 (function initActiveNav() {
