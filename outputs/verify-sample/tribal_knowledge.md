@@ -1,0 +1,6 @@
+# Tribal Knowledge
+- hidden-custom-script-coupling
+- undocumented-manual-ops-steps
+- interface-retry-storms
+- prod-only-data-edge-cases
+- handover-documentation-gaps

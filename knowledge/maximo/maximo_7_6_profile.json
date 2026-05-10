@@ -1,0 +1,9 @@
+{
+  "version": "7.6.x",
+  "architecture": "WebSphere-centric JVM deployment",
+  "key_focus": [
+    "middleware tuning",
+    "MIF governance",
+    "upgrade prep for MAS"
+  ]
+}

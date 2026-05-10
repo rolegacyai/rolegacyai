@@ -1,0 +1,10 @@
+{
+  "domains": [
+    "security-access",
+    "automation-scripting",
+    "performance-tuning",
+    "reporting-data",
+    "release-management",
+    "platform-operations"
+  ]
+}

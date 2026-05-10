@@ -1,0 +1,24 @@
+{
+  "dimensions": [
+    {
+      "name": "documentation",
+      "weight": 20
+    },
+    {
+      "name": "operational-runbooks",
+      "weight": 20
+    },
+    {
+      "name": "integration-observability",
+      "weight": 20
+    },
+    {
+      "name": "platform-resilience",
+      "weight": 20
+    },
+    {
+      "name": "knowledge-transfer",
+      "weight": 20
+    }
+  ]
+}

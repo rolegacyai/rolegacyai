@@ -1,0 +1,63 @@
+<html><body><h1>Maximo 9 integration-consultant for transport in mas-openshift</h1><pre>{
+  "summary": "Maximo 9 integration-consultant for transport in mas-openshift",
+  "readiness": {
+    "overall": 66,
+    "status": "amber"
+  },
+  "functional_map": [
+    "work-management",
+    "asset-management",
+    "inventory-procurement",
+    "planning-scheduling",
+    "hse-compliance",
+    "mobile-operations"
+  ],
+  "technical_map": [
+    "security-access",
+    "automation-scripting",
+    "performance-tuning",
+    "reporting-data",
+    "release-management",
+    "platform-operations"
+  ],
+  "integration_map": [
+    "oslc-query",
+    "mif-object-structures",
+    "json-rest-nextgen",
+    "event-driven-messaging",
+    "batch-integration",
+    "master-data-sync"
+  ],
+  "risks": [
+    "integration-backlog-growth",
+    "cron-task-misconfiguration",
+    "security-group-drift",
+    "environment-configuration-drift",
+    "upgrade-regression",
+    "reporting-performance-impact"
+  ],
+  "tribal": [
+    "hidden-custom-script-coupling",
+    "undocumented-manual-ops-steps",
+    "interface-retry-storms",
+    "prod-only-data-edge-cases",
+    "handover-documentation-gaps"
+  ],
+  "questions": [
+    "What is your current Maximo/MAS version and patch cadence?",
+    "Who owns OpenShift platform SRE responsibilities?",
+    "What integrations are business-critical in first 24h of outage?",
+    "Which customizations are unsupported or no longer maintainable?",
+    "How are security roles promoted across environments?"
+  ],
+  "onboarding": {
+    "30": "shadow runbooks and incidents",
+    "60": "own prioritized integrations and cron governance",
+    "90": "lead release readiness + handover simulation"
+  },
+  "demo_talk_track": [
+    "Context and version/deployment",
+    "Top risks and controls",
+    "Readiness score and 90-day successor plan"
+  ]
+}</pre></body></html>
