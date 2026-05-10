@@ -1,9 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-// Helper: fire a JS-level click on an element identified by CSS selector.
-// This dispatches the DOM click event directly, bypassing Playwright's pointer
-// simulation, and reliably fires addEventListener('click', …) handlers even
-// when a layout element would otherwise intercept pointer events.
 async function jsClick(page: import('@playwright/test').Page, selector: string) {
   await page.evaluate((sel) => {
     const el = document.querySelector(sel) as HTMLElement | null;
@@ -16,10 +12,45 @@ test.describe('Patent Pending Modal', () => {
   test.beforeEach(async ({ page }) => {
     page.on('pageerror', (err) => console.error('[pageerror]', err.message));
     page.on('console', (msg) => {
-      if (msg.type() === 'error') console.error('[console error]', msg.text());
+      const t = msg.type();
+      if (t === 'error') console.error('[browser error]', msg.text());
+      else console.log(`[browser ${t}]`, msg.text());
     });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
+  });
+
+  test('DIAG: JS execution and element state', async ({ page }) => {
+    const state = await page.evaluate(() => {
+      const modal = document.getElementById('patent-modal') as HTMLElement | null;
+      const btn   = document.getElementById('patent-btn')   as HTMLElement | null;
+
+      const beforeHidden = modal?.hidden;
+      if (btn) btn.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+      const afterHidden = modal?.hidden;
+      if (modal && !afterHidden) modal.hidden = true;
+
+      return {
+        langStyleInjected:   !!document.getElementById('rolegacy-language-style'),
+        langSwitcherInDOM:   !!document.querySelector('.language-switcher'),
+        patentBtnInDOM:      !!btn,
+        patentBadgeBtnInDOM: !!document.getElementById('patent-badge-btn'),
+        patentModalInDOM:    !!modal,
+        modalHiddenBefore:   beforeHidden,
+        modalHiddenAfter:    afterHidden,
+        listenerAttached:    typeof beforeHidden === 'boolean' && typeof afterHidden === 'boolean'
+                             && beforeHidden && !afterHidden,
+        dataLayer:           Array.isArray((window as any).dataLayer),
+        gtagType:            typeof (window as any).gtag,
+        htmlLang:            document.documentElement.lang,
+        scriptTags:          Array.from(document.scripts).map(s => s.src || '(inline)'),
+      };
+    });
+
+    console.log('[DIAG] page state:\n' + JSON.stringify(state, null, 2));
+
+    expect(state.patentBtnInDOM,   'patent-btn must exist').toBe(true);
+    expect(state.patentModalInDOM, 'patent-modal must exist').toBe(true);
   });
 
   test('clicking Patent Pending nav button opens modal', async ({ page }) => {
