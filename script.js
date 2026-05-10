@@ -609,6 +609,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
+// ─── PATENT PENDING MODAL ────────────────────────────────────────────────────
+(function initPatentModal() {
+  const modal = document.getElementById('patent-modal');
+  if (!modal) return;
+
+  const openers = document.querySelectorAll('#patent-btn, #patent-badge-btn');
+  const closeBtn = document.getElementById('patent-modal-close');
+  const backdrop = document.getElementById('patent-modal-backdrop');
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  openers.forEach(function(btn) {
+    btn.addEventListener('click', openModal);
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+
 // ─── ACTIVE NAV LINK ─────────────────────────────────────────────────────────
 (function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
