@@ -95,7 +95,7 @@
     const normalised = translations[normaliseText(original)];
     const translated = exact || normalised;
     if (translated) {
-      node.textContent = original.includes('\n') ? translated : translated;
+      node.textContent = translated;
     }
   }
 
@@ -136,37 +136,49 @@
         align-items: center;
         gap: 0.2rem;
         padding: 0.18rem;
-        border: 1px solid var(--border);
+        border: 1px solid var(--border, rgba(228, 229, 228, 0.12));
         border-radius: 999px;
-        background: rgba(255,255,255,0.035);
+        background: rgba(15,15,16,0.88);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .language-switcher--nav {
+        flex-shrink: 0;
+        margin-left: auto;
+        margin-right: 1rem;
+        z-index: 120;
+      }
+      .language-switcher--floating {
+        position: fixed;
+        top: 0.85rem;
+        right: 1rem;
+        z-index: 1000;
       }
       .language-switcher__option {
         border: 0;
         border-radius: 999px;
         padding: 0.35rem 0.55rem;
         background: transparent;
-        color: var(--text-sec);
-        font-family: var(--font-head);
+        color: var(--text-sec, #a1a1aa);
+        font-family: var(--font-head, system-ui, sans-serif);
         font-size: 0.75rem;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1;
         cursor: pointer;
         transition: background 0.2s ease, color 0.2s ease;
       }
       .language-switcher__option:hover,
       .language-switcher__option:focus-visible {
-        color: var(--text-primary);
+        color: var(--text-primary, #f4f4f5);
         outline: none;
       }
       .language-switcher__option.active {
-        background: var(--amber);
+        background: var(--amber, #d4a373);
         color: #0f0f10;
       }
-      .nav__links .language-switcher {
-        margin-left: -0.5rem;
-      }
       html[data-language="zh-CN"] body {
-        font-family: var(--font-body), 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+        font-family: var(--font-body, system-ui, sans-serif), 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
       }
       html[data-language="zh-CN"] .hero__headline,
       html[data-language="zh-CN"] .section-title,
@@ -179,17 +191,22 @@
         letter-spacing: -0.015em;
       }
       @media (max-width: 768px) {
-        .nav__links .language-switcher {
-          margin-left: 0;
+        .language-switcher--nav {
+          margin-left: auto;
+          margin-right: 0.75rem;
+        }
+        .language-switcher__option {
+          padding: 0.34rem 0.5rem;
+          font-size: 0.72rem;
         }
       }
     `;
     document.head.appendChild(style);
   }
 
-  function createSwitcher() {
+  function createSwitcher(extraClass) {
     const wrap = document.createElement('div');
-    wrap.className = 'language-switcher';
+    wrap.className = `language-switcher ${extraClass || ''}`.trim();
     wrap.setAttribute('role', 'group');
     wrap.setAttribute('aria-label', 'Language selector');
     wrap.innerHTML = `
@@ -204,12 +221,18 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     ensureStyles();
-    const navLinks = document.querySelector('.nav__links');
-    if (navLinks && !navLinks.querySelector('.language-switcher')) {
-      const item = document.createElement('li');
-      item.appendChild(createSwitcher());
-      navLinks.appendChild(item);
+    const navInner = document.querySelector('.nav__inner');
+    const menuToggle = document.querySelector('.nav__menu-toggle');
+
+    if (navInner && !navInner.querySelector('.language-switcher')) {
+      const switcher = createSwitcher('language-switcher--nav');
+      navInner.insertBefore(switcher, menuToggle || null);
     }
+
+    if (!document.querySelector('.language-switcher')) {
+      document.body.appendChild(createSwitcher('language-switcher--floating'));
+    }
+
     applyLanguage(localStorage.getItem(STORAGE_KEY) || defaultLang);
   });
 })();
