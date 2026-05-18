@@ -40,6 +40,7 @@
     <xhtml:link rel="alternate" hreflang="mr"    href="https://rolegacyai.com/mr/blog/"/>
   </url>
   <url><loc>https://rolegacyai.com/prototype</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rolegacyai.com/founder-story</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- ── Chinese Simplified (/zh/) ───────────────────────────────── -->
   <url>

@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founder Story | RolegacyAI</title>
+  <meta name="description" content="The story behind RolegacyAI — a practical approach to role memory, successor readiness, operational continuity, and institutional knowledge preservation." />
+  <meta name="keywords" content="RolegacyAI, role memory, successor readiness, operational continuity, institutional knowledge, knowledge preservation, handover intelligence, workflow intelligence, capability transfer, AI-assisted handover" />
+  <meta property="og:title" content="Founder Story | RolegacyAI" />
+  <meta property="og:description" content="The story behind RolegacyAI — a practical approach to role memory, successor readiness, operational continuity, and institutional knowledge preservation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rolegacyai.com/founder-story" />
+  <meta property="og:image" content="https://rolegacyai.com/og-founder-story.png" />
+  <link rel="canonical" href="https://rolegacyai.com/founder-story" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Bangers&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5JPC2N2CP5');
+  </script>
+  <style>
+    /* ── Comic base ─────────────────────────────────────────────────── */
+    .fc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Halftone dot texture */
+    .halftone {
+      position: relative;
+    }
+    .halftone::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(212,163,115,0.09) 1px, transparent 1px);
+      background-size: 18px 18px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .halftone > * { position: relative; z-index: 1; }
+
+    /* Comic panel frame */
+    .comic-panel {
+      background: #18181b;
+      border: 3px solid rgba(212,163,115,0.55);
+      border-radius: 4px;
+      box-shadow: 5px 5px 0 rgba(212,163,115,0.18), 0 0 40px rgba(212,163,115,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .comic-panel::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(212,163,115,0.18);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    /* Impact / onomatopoeia text */
+    .comic-impact {
+      font-family: 'Bangers', 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      text-shadow:
+        3px 3px 0 rgba(0,0,0,0.7),
+        0 0 30px rgba(242,193,78,0.4);
+      line-height: 1;
+      display: inline-block;
+      transform: rotate(-3deg);
+    }
+    .comic-impact--small {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      transform: rotate(2deg);
+    }
+
+    /* Speech bubble */
+    .speech-bubble {
+      background: #f4f4f5;
+      color: #0f0f10;
+      border: 2px solid #0f0f10;
+      border-radius: 12px;
+      padding: 0.75rem 1.1rem;
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      max-width: 240px;
+      line-height: 1.4;
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 24px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 12px solid #0f0f10;
+    }
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      left: 26px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #f4f4f5;
+      z-index: 1;
+    }
+
+    /* Thought bubble */
+    .thought-bubble {
+      background: rgba(212,163,115,0.1);
+      color: var(--amber);
+      border: 2px solid rgba(212,163,115,0.4);
+      border-radius: 12px;
+      padding: 0.75rem 1.1rem;
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    /* Panel number stamp */
+    .panel-num {
+      font-family: 'Bangers', var(--font-head), sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: rgba(212,163,115,0.5);
+      text-transform: uppercase;
+      position: absolute;
+      top: 10px;
+      right: 14px;
+    }
+
+    /* ── HERO ────────────────────────────────────────────────────────── */
+    .fc-hero {
+      padding: 5rem 1.5rem 0;
+    }
+    .fc-hero__panel {
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 0;
+      align-items: stretch;
+    }
+    .fc-hero__text {
+      padding: 3.5rem 2.5rem 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 2px solid rgba(212,163,115,0.25);
+    }
+    .fc-hero__eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.25rem;
+      font-family: var(--font-head);
+    }
+    .fc-hero__title {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text-primary);
+      margin-bottom: 1.75rem;
+    }
+    .fc-hero__title em {
+      color: var(--amber);
+      font-style: normal;
+    }
+    .fc-hero__caption {
+      background: rgba(0,0,0,0.4);
+      border-left: 3px solid var(--amber);
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+      font-family: var(--font-body);
+      margin-bottom: 1.25rem;
+    }
+    .fc-hero__question {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .fc-hero__right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 1.5rem;
+      background: rgba(212,163,115,0.03);
+      position: relative;
+    }
+
+    /* ── AI BUG CHARACTER SVG ───────────────────────────────────────── */
+    .ai-bug {
+      filter: drop-shadow(0 0 12px rgba(212,163,115,0.35));
+      transition: filter 0.3s ease;
+    }
+    .ai-bug:hover {
+      filter: drop-shadow(0 0 22px rgba(212,163,115,0.6));
+    }
+    @keyframes bugFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes eyeGlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.55; }
+    }
+    @keyframes legWiggle {
+      0%, 100% { transform: rotate(0deg); transform-origin: center; }
+      25% { transform: rotate(1.5deg); }
+      75% { transform: rotate(-1.5deg); }
+    }
+    .ai-bug-float { animation: bugFloat 4s ease-in-out infinite; }
+    .bug-eye { animation: eyeGlow 2s ease-in-out infinite; }
+    .bug-legs { animation: legWiggle 3s ease-in-out infinite; }
+
+    @keyframes webSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .web-ring { transform-origin: 100px 90px; animation: webSpin 20s linear infinite; opacity: 0.08; }
+
+    /* ── PROBLEM SECTION ────────────────────────────────────────────── */
+    .fc-problem {
+      padding: 0 1.5rem;
+    }
+    .fc-problem__grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .fc-problem__panel {
+      padding: 2rem 1.75rem;
+      border-right: 2px solid rgba(212,163,115,0.25);
+      border-top: 3px solid rgba(212,163,115,0.55);
+      background: #16161a;
+      position: relative;
+    }
+    .fc-problem__panel:first-child { border-left: 3px solid rgba(212,163,115,0.55); }
+    .fc-problem__panel:last-child { border-right: 3px solid rgba(212,163,115,0.55); }
+    .fc-problem__panel-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.25rem;
+    }
+    .fc-problem__panel h3 {
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+    .fc-problem__panel p {
+      font-size: 0.92rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+    }
+    .fc-problem__panel p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .fc-problem__impact {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      background: #0f0f10;
+      border-left: 3px solid rgba(212,163,115,0.55);
+      border-right: 3px solid rgba(212,163,115,0.55);
+      border-bottom: 3px solid rgba(212,163,115,0.55);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    /* ── QUOTE SECTION ──────────────────────────────────────────────── */
+    .fc-quote {
+      padding: 3rem 1.5rem;
+    }
+    .fc-quote__inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .fc-quote__box {
+      background: rgba(212,163,115,0.07);
+      border: 1px solid rgba(212,163,115,0.25);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fc-quote__box::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 1.5rem;
+      font-family: 'Bangers', serif;
+      font-size: 8rem;
+      color: var(--amber);
+      opacity: 0.08;
+      line-height: 1;
+    }
+    .fc-quote__text {
+      font-family: var(--font-head);
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      font-weight: 600;
+      color: var(--amber);
+      line-height: 1.45;
+      position: relative;
+    }
+    .fc-quote__glow {
+      animation: quoteGlow 3s ease-in-out infinite;
+    }
+    @keyframes quoteGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(212,163,115,0.08), inset 0 0 20px rgba(212,163,115,0.03); }
+      50% { box-shadow: 0 0 40px rgba(212,163,115,0.15), inset 0 0 30px rgba(212,163,115,0.06); }
+    }
+
+    /* ── DISCLOSURE SECTION ─────────────────────────────────────────── */
+    .fc-disclosure {
+      padding: 0 1.5rem 0;
+    }
+    .fc-disclosure__panel {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      border: 3px solid rgba(212,163,115,0.55);
+      border-radius: 4px;
+      background: #111118;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 rgba(212,163,115,0.18);
+    }
+    .fc-disclosure__panel::before {
+      display: none;
+    }
+    .fc-disclosure__art {
+      background: linear-gradient(160deg, #0a0a0f 0%, #15151c 100%);
+      border-right: 2px solid rgba(212,163,115,0.25);
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      position: relative;
+    }
+    .fc-disclosure__art-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(212,163,115,0.45);
+      text-align: center;
+    }
+    .fc-disclosure__text {
+      padding: 2.5rem 2.5rem 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .fc-disclosure__intro {
+      font-size: 1.05rem;
+      color: var(--text-sec);
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+    .fc-disclosure__list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .fc-disclosure__list li {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .fc-disclosure__list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: 0.8rem;
+    }
+    .fc-disclosure__negation {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .fc-disclosure__negation li {
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--amber);
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .fc-disclosure__negation li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: rgba(212,163,115,0.5);
+      font-size: 0.75rem;
+      top: 0.2em;
+    }
+    .fc-disclosure__mirror {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-style: italic;
+      border-left: 3px solid var(--amber);
+      padding-left: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ── TIMELINE SECTION ───────────────────────────────────────────── */
+    .fc-timeline {
+      padding: 3.5rem 1.5rem;
+    }
+    .fc-timeline__inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .fc-timeline__header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .fc-timeline__label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+      font-family: var(--font-head);
+    }
+    .fc-timeline__title {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    .fc-timeline__track {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .fc-timeline__track::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--amber) 0%, var(--amber) var(--line-progress, 0%), rgba(212,163,115,0.15) var(--line-progress, 0%), rgba(212,163,115,0.15) 100%);
+      transform: translateX(-50%);
+      transition: --line-progress 0.6s ease;
+    }
+    .tl-node {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      align-items: start;
+      position: relative;
+      padding: 1.25rem 0;
+    }
+    .tl-node__left { padding-right: 2rem; }
+    .tl-node__right { padding-left: 2rem; }
+    .tl-node--right .tl-node__left { order: 3; padding-right: 0; padding-left: 2rem; }
+    .tl-node--right .tl-node__center { order: 2; }
+    .tl-node--right .tl-node__right { order: 1; padding-left: 0; padding-right: 2rem; }
+    .tl-node__center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .tl-node__dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2.5px solid var(--amber);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+      margin: 5px auto;
+    }
+    .tl-node__dot.is-active {
+      background: var(--amber);
+      box-shadow: 0 0 12px rgba(212,163,115,0.6), 0 0 24px rgba(212,163,115,0.3);
+    }
+    .tl-node__photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      background: #16161a;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .tl-node__photo:hover { border-color: rgba(212,163,115,0.4); }
+    .tl-node__photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .tl-node__photo-placeholder svg {
+      opacity: 0.25;
+    }
+    .tl-node__photo-placeholder span {
+      font-size: 0.65rem;
+      color: var(--text-sec);
+      opacity: 0.5;
+      font-family: var(--font-head);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .tl-node__content {}
+    .tl-node__year {
+      font-family: 'Bangers', var(--font-head), sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      color: var(--amber);
+      margin-bottom: 0.35rem;
+      line-height: 1;
+    }
+    .tl-node__label {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .tl-node__desc {
+      font-size: 0.875rem;
+      color: var(--text-sec);
+      line-height: 1.65;
+    }
+    .tl-node__bug-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      background: rgba(212,163,115,0.08);
+      border: 1px solid rgba(212,163,115,0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.7rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--amber);
+      text-transform: uppercase;
+    }
+
+    /* ── CLOSING SECTION ────────────────────────────────────────────── */
+    .fc-closing {
+      padding: 0 1.5rem 5rem;
+    }
+    .fc-closing__panel {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3.5rem 3rem;
+      text-align: center;
+      background: #16161a;
+      border: 3px solid rgba(212,163,115,0.55);
+      border-radius: 4px;
+      box-shadow: 5px 5px 0 rgba(212,163,115,0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .fc-closing__panel::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(212,163,115,0.15);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .fc-closing__bug {
+      margin: 0 auto 1.75rem;
+      display: block;
+    }
+    .fc-closing__text {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-sec);
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto 0.75rem;
+    }
+    .fc-closing__text strong {
+      color: var(--text-primary);
+    }
+    .fc-closing__text + .fc-closing__text {
+      margin-top: 0.75rem;
+    }
+    .fc-closing__cta {
+      margin-top: 2.25rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .fc-closing__cta .btn--primary {
+      background: var(--amber);
+      color: #0a0a0f;
+      border: none;
+      padding: 0.85rem 2.25rem;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .fc-closing__cta .btn--primary:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,163,115,0.35);
+    }
+    .fc-closing__cta .btn--primary:active {
+      transform: scale(0.97) translateY(0);
+      background: #bf8c5e;
+    }
+
+    /* ── CONNECTOR STRIPE BETWEEN PANELS ───────────────────────────── */
+    .fc-stripe {
+      max-width: 900px;
+      margin: 0 auto;
+      height: 28px;
+      border-left: 3px solid rgba(212,163,115,0.55);
+      border-right: 3px solid rgba(212,163,115,0.55);
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 6px,
+        rgba(212,163,115,0.04) 6px,
+        rgba(212,163,115,0.04) 12px
+      );
+    }
+
+    /* ── MOBILE ─────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .fc-hero__panel {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .fc-hero__text {
+        border-right: none;
+        border-bottom: 2px solid rgba(212,163,115,0.25);
+        padding: 2.5rem 1.5rem;
+      }
+      .fc-hero__right {
+        padding: 1.75rem 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .fc-problem__grid {
+        grid-template-columns: 1fr;
+      }
+      .fc-problem__panel {
+        border-right: 3px solid rgba(212,163,115,0.55);
+        border-top: 2px solid rgba(212,163,115,0.25);
+      }
+      .fc-problem__panel:first-child { border-top: 3px solid rgba(212,163,115,0.55); }
+      .fc-problem__impact { flex-direction: column; gap: 1rem; }
+      .fc-disclosure__panel {
+        grid-template-columns: 1fr;
+      }
+      .fc-disclosure__art {
+        border-right: none;
+        border-bottom: 2px solid rgba(212,163,115,0.25);
+        padding: 2rem 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .fc-disclosure__text { padding: 2rem 1.5rem; }
+      .tl-node {
+        grid-template-columns: 24px 1fr;
+        gap: 0;
+      }
+      .tl-node__center { grid-column: 1; }
+      .tl-node__left, .tl-node__right { grid-column: 2; padding: 0 0 0 1.25rem; }
+      .tl-node--right .tl-node__left,
+      .tl-node--right .tl-node__right { order: unset; padding: 0 0 0 1.25rem; }
+      .tl-node--right .tl-node__center { order: unset; }
+      .fc-timeline__track::before { left: 11px; transform: none; }
+      .tl-node__photo { aspect-ratio: 4/3; max-width: 280px; }
+      .fc-closing__panel { padding: 2.5rem 1.5rem; }
+      .fc-quote__box { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .fc-hero { padding-top: 4rem; }
+      .comic-impact { font-size: 2rem; }
+    }
+
+    /* ── SCROLL REVEAL ──────────────────────────────────────────────── */
+    .fc-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fc-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fc-reveal--d1 { transition-delay: 0.1s; }
+    .fc-reveal--d2 { transition-delay: 0.2s; }
+    .fc-reveal--d3 { transition-delay: 0.3s; }
+    .fc-reveal--d4 { transition-delay: 0.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fc-reveal { opacity: 1; transform: none; transition: none; }
+      .ai-bug-float, .bug-eye, .bug-legs, .web-ring { animation: none; }
+      .fc-quote__glow { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────────────────── -->
+  <header class="nav" role="banner">
+    <nav class="nav__inner" aria-label="Primary navigation">
+      <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+        <svg class="nav__logo-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+          <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav__logo-text">RolegacyAI</span>
+      </a>
+      <button class="nav__menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="story.html">Story</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="blog.html">Insights</a></li>
+        <li><a href="/#report">The Report</a></li>
+        <li><a href="prototype.html">Prototype</a></li>
+        <li>
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="nav__cta">Partner With Us</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PANEL 1 — HERO
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="fc-hero" aria-labelledby="fc-title">
+      <div class="comic-panel halftone fc-hero__panel fc-reveal">
+        <span class="panel-num">PANEL 01</span>
+
+        <!-- Left: copy -->
+        <div class="fc-hero__text">
+          <p class="fc-hero__eyebrow" aria-hidden="true">◈ Origin Story</p>
+          <h1 id="fc-title" class="fc-hero__title">
+            How <em>RolegacyAI</em><br>Started
+          </h1>
+          <div class="fc-hero__caption">
+            <p>RolegacyAI did not start as a polished product idea.</p>
+            <p style="margin-top:0.6rem">It started with a simple frustration.</p>
+          </div>
+          <p class="fc-hero__question">
+            Why do organisations keep losing<br>
+            the knowledge they already paid for?
+          </p>
+        </div>
+
+        <!-- Right: AI Bug character -->
+        <div class="fc-hero__right">
+          <!-- Main AI Bug SVG — large hero pose -->
+          <div class="ai-bug-float">
+            <svg class="ai-bug" width="220" height="240" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-label="AI Bug character — a circuit-board spider" role="img">
+              <!-- Neural web background rings -->
+              <g class="web-ring">
+                <circle cx="100" cy="95" r="72" fill="none" stroke="#d4a373" stroke-width="0.4" stroke-dasharray="4 8"/>
+                <circle cx="100" cy="95" r="55" fill="none" stroke="#d4a373" stroke-width="0.3" stroke-dasharray="3 7"/>
+              </g>
+              <!-- Web spokes -->
+              <g stroke="#d4a373" stroke-width="0.5" opacity="0.12">
+                <line x1="100" y1="95" x2="28"  y2="23"/>
+                <line x1="100" y1="95" x2="172" y2="23"/>
+                <line x1="100" y1="95" x2="8"   y2="95"/>
+                <line x1="100" y1="95" x2="192" y2="95"/>
+                <line x1="100" y1="95" x2="28"  y2="167"/>
+                <line x1="100" y1="95" x2="172" y2="167"/>
+                <line x1="100" y1="95" x2="100" y2="8"/>
+                <line x1="100" y1="95" x2="100" y2="182"/>
+              </g>
+              <!-- LEFT LEGS (circuit-trace L-shapes) -->
+              <g class="bug-legs" stroke="#d4a373" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- L1 upper -->
+                <polyline points="76,76 52,60 32,50"/>
+                <circle cx="32" cy="50" r="3" fill="#d4a373" stroke="none"/>
+                <!-- L2 mid-upper -->
+                <polyline points="76,85 46,82 26,72"/>
+                <circle cx="26" cy="72" r="3" fill="#d4a373" stroke="none"/>
+                <!-- L3 mid-lower -->
+                <polyline points="76,95 48,100 28,94"/>
+                <circle cx="28" cy="94" r="3" fill="#d4a373" stroke="none"/>
+                <!-- L4 lower -->
+                <polyline points="80,107 54,118 36,114"/>
+                <circle cx="36" cy="114" r="3" fill="#d4a373" stroke="none"/>
+              </g>
+              <!-- RIGHT LEGS -->
+              <g class="bug-legs" stroke="#d4a373" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- R1 upper -->
+                <polyline points="124,76 148,60 168,50"/>
+                <circle cx="168" cy="50" r="3" fill="#d4a373" stroke="none"/>
+                <!-- R2 mid-upper -->
+                <polyline points="124,85 154,82 174,72"/>
+                <circle cx="174" cy="72" r="3" fill="#d4a373" stroke="none"/>
+                <!-- R3 mid-lower -->
+                <polyline points="124,95 152,100 172,94"/>
+                <circle cx="172" cy="94" r="3" fill="#d4a373" stroke="none"/>
+                <!-- R4 lower -->
+                <polyline points="120,107 146,118 164,114"/>
+                <circle cx="164" cy="114" r="3" fill="#d4a373" stroke="none"/>
+              </g>
+              <!-- Abdomen / lower body -->
+              <ellipse cx="100" cy="112" rx="16" ry="20" fill="#18181b" stroke="#d4a373" stroke-width="1.5"/>
+              <line x1="100" y1="92" x2="100" y2="126" stroke="#d4a373" stroke-width="0.8" opacity="0.5"/>
+              <!-- Main body (hexagonal chip) -->
+              <polygon points="100,52 124,65 124,91 100,104 76,91 76,65" fill="#18181b" stroke="#d4a373" stroke-width="2"/>
+              <!-- Chip body inner circuit detail -->
+              <rect x="86" y="73" width="28" height="18" rx="2" fill="none" stroke="#d4a373" stroke-width="0.8" opacity="0.45"/>
+              <line x1="86" y1="78" x2="114" y2="78" stroke="#d4a373" stroke-width="0.6" opacity="0.3"/>
+              <line x1="86" y1="83" x2="114" y2="83" stroke="#d4a373" stroke-width="0.6" opacity="0.3"/>
+              <!-- Chip pins on body sides -->
+              <line x1="76" y1="70" x2="70" y2="70" stroke="#d4a373" stroke-width="1" opacity="0.6"/>
+              <line x1="76" y1="76" x2="70" y2="76" stroke="#d4a373" stroke-width="1" opacity="0.6"/>
+              <line x1="76" y1="82" x2="70" y2="82" stroke="#d4a373" stroke-width="1" opacity="0.6"/>
+              <line x1="124" y1="70" x2="130" y2="70" stroke="#d4a373" stroke-width="1" opacity="0.6"/>
+              <line x1="124" y1="76" x2="130" y2="76" stroke="#d4a373" stroke-width="1" opacity="0.6"/>
+              <line x1="124" y1="82" x2="130" y2="82" stroke="#d4a373" stroke-width="1" opacity="0.6"/>
+              <!-- Head area -->
+              <ellipse cx="100" cy="56" rx="12" ry="10" fill="#1a1a1f" stroke="#d4a373" stroke-width="1.5"/>
+              <!-- Eyes -->
+              <circle class="bug-eye" cx="94" cy="54" r="4" fill="#d4a373"/>
+              <circle class="bug-eye" cx="106" cy="54" r="4" fill="#d4a373"/>
+              <!-- Eye pupils -->
+              <circle cx="95" cy="53" r="1.5" fill="#0a0a0f"/>
+              <circle cx="107" cy="53" r="1.5" fill="#0a0a0f"/>
+              <!-- Eye glow rings -->
+              <circle cx="94" cy="54" r="6.5" fill="none" stroke="#d4a373" stroke-width="0.6" opacity="0.4"/>
+              <circle cx="106" cy="54" r="6.5" fill="none" stroke="#d4a373" stroke-width="0.6" opacity="0.4"/>
+              <!-- Antennae -->
+              <polyline points="94,46 88,33 82,28" stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="82" cy="28" r="3" fill="#d4a373"/>
+              <polyline points="106,46 112,33 118,28" stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="118" cy="28" r="3" fill="#d4a373"/>
+            </svg>
+          </div>
+          <div class="thought-bubble" style="font-size:0.78rem; max-width:180px; text-align:center">
+            "Why does this keep happening...?"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fc-stripe"></div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PANELS 2–4 — THE PROBLEM
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="fc-problem" aria-labelledby="fc-problem-heading">
+      <div class="fc-reveal">
+        <div class="fc-problem__grid">
+
+          <!-- Panel A -->
+          <div class="fc-problem__panel">
+            <span class="panel-num">02</span>
+            <svg class="fc-problem__panel-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="8" width="18" height="22" rx="2" stroke="#d4a373" stroke-width="1.5"/>
+              <rect x="26" y="4" width="18" height="14" rx="2" stroke="#d4a373" stroke-width="1.5" opacity="0.6"/>
+              <rect x="10" y="32" width="24" height="12" rx="2" stroke="#d4a373" stroke-width="1.5" opacity="0.4"/>
+              <path d="M22 18 L38 10" stroke="#d4a373" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+              <path d="M22 20 L34 38" stroke="#d4a373" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+            </svg>
+            <h3 id="fc-problem-heading">Every project teaches something</h3>
+            <p>
+              Every project, incident, mobilisation, release, handover, workaround, and operational recovery <strong>teaches people something.</strong>
+            </p>
+            <p style="margin-top:0.75rem">
+              But too often that knowledge stays scattered across inboxes, tickets, documents, chats, spreadsheets, and memory.
+            </p>
+          </div>
+
+          <!-- Panel B -->
+          <div class="fc-problem__panel">
+            <span class="panel-num">03</span>
+            <svg class="fc-problem__panel-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="16" r="8" stroke="#d4a373" stroke-width="1.5"/>
+              <path d="M16 28 C16 22 32 22 32 28 L34 44 H14 Z" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <path d="M30 20 L44 8" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M38 6 L46 6 L46 14" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Then someone leaves</h3>
+            <p>
+              <strong>Then someone leaves.</strong>
+            </p>
+            <p style="margin-top:0.75rem">
+              They take with them what they know — the workarounds, the undocumented decisions, the context that makes the role function.
+            </p>
+            <p style="margin-top:0.75rem">
+              Not maliciously. Just inevitably.
+            </p>
+          </div>
+
+          <!-- Panel C -->
+          <div class="fc-problem__panel">
+            <span class="panel-num">04</span>
+            <svg class="fc-problem__panel-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="16" r="8" stroke="#d4a373" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <path d="M16 28 C16 22 32 22 32 28 L34 44 H14 Z" stroke="#d4a373" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+              <line x1="6" y1="6" x2="12" y2="12" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <line x1="14" y1="4" x2="14" y2="12" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              <line x1="4" y1="14" x2="12" y2="14" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            </svg>
+            <h3>The next person inherits fragments</h3>
+            <p>
+              The next person inherits <strong>fragments</strong>.
+            </p>
+            <p style="margin-top:0.75rem">
+              Partial documentation. Outdated wikis. Verbal handovers that compress years of nuance into hours of conversation.
+            </p>
+            <p style="margin-top:0.75rem">
+              And the cycle begins again.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Impact divider -->
+        <div class="fc-problem__impact">
+          <span class="comic-impact comic-impact--small" aria-hidden="true">REPEAT.</span>
+          <p style="font-size:0.9rem; color:var(--text-sec); line-height:1.6; flex:1">
+            That question became the centre of RolegacyAI — not as a data problem, but as an
+            <strong style="color:var(--text-primary)">institutional memory problem</strong>
+            hiding in plain sight.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         QUOTE PANEL
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="fc-quote" aria-label="Core question">
+      <div class="fc-quote__inner fc-reveal">
+        <div class="fc-quote__box fc-quote__glow">
+          <p class="fc-quote__text">
+            "If your best employee left tomorrow,<br>
+            what would the next person inherit?"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="fc-stripe"></div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PANEL 5 — AI DISCLOSURE
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="fc-disclosure" aria-labelledby="fc-disclosure-heading">
+      <div class="fc-reveal">
+        <div class="fc-disclosure__panel comic-panel">
+          <span class="panel-num">05</span>
+
+          <!-- Left: small bug + bubbles -->
+          <div class="fc-disclosure__art halftone">
+            <div class="fc-disclosure__art-label">Thinking Partner</div>
+
+            <!-- Small AI Bug variant — "listening" pose -->
+            <div class="ai-bug-float">
+              <svg class="ai-bug" width="130" height="145" viewBox="0 0 130 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Web spokes -->
+                <g stroke="#d4a373" stroke-width="0.4" opacity="0.12">
+                  <line x1="65" y1="60" x2="10"  y2="10"/>
+                  <line x1="65" y1="60" x2="120" y2="10"/>
+                  <line x1="65" y1="60" x2="10"  y2="100"/>
+                  <line x1="65" y1="60" x2="120" y2="100"/>
+                </g>
+                <!-- Legs LEFT -->
+                <g stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="49,49 32,38 18,32"/>
+                  <circle cx="18" cy="32" r="2.5" fill="#d4a373" stroke="none"/>
+                  <polyline points="49,55 28,53 15,47"/>
+                  <circle cx="15" cy="47" r="2.5" fill="#d4a373" stroke="none"/>
+                  <polyline points="49,61 30,64 18,60"/>
+                  <circle cx="18" cy="60" r="2.5" fill="#d4a373" stroke="none"/>
+                  <polyline points="52,69 34,76 22,74"/>
+                  <circle cx="22" cy="74" r="2.5" fill="#d4a373" stroke="none"/>
+                </g>
+                <!-- Legs RIGHT -->
+                <g stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="81,49 98,38 112,32"/>
+                  <circle cx="112" cy="32" r="2.5" fill="#d4a373" stroke="none"/>
+                  <polyline points="81,55 102,53 115,47"/>
+                  <circle cx="115" cy="47" r="2.5" fill="#d4a373" stroke="none"/>
+                  <polyline points="81,61 100,64 112,60"/>
+                  <circle cx="112" cy="60" r="2.5" fill="#d4a373" stroke="none"/>
+                  <polyline points="78,69 96,76 108,74"/>
+                  <circle cx="108" cy="74" r="2.5" fill="#d4a373" stroke="none"/>
+                </g>
+                <!-- Abdomen -->
+                <ellipse cx="65" cy="74" rx="10" ry="14" fill="#18181b" stroke="#d4a373" stroke-width="1.5"/>
+                <!-- Body -->
+                <polygon points="65,34 81,43 81,61 65,70 49,61 49,43" fill="#18181b" stroke="#d4a373" stroke-width="1.8"/>
+                <!-- Chip detail -->
+                <rect x="55" y="47" width="20" height="12" rx="1.5" fill="none" stroke="#d4a373" stroke-width="0.7" opacity="0.4"/>
+                <!-- Head -->
+                <ellipse cx="65" cy="36" rx="9" ry="8" fill="#1a1a1f" stroke="#d4a373" stroke-width="1.5"/>
+                <!-- Eyes -->
+                <circle class="bug-eye" cx="60" cy="34" r="3" fill="#d4a373"/>
+                <circle class="bug-eye" cx="70" cy="34" r="3" fill="#d4a373"/>
+                <circle cx="61" cy="33" r="1.2" fill="#0a0a0f"/>
+                <circle cx="71" cy="33" r="1.2" fill="#0a0a0f"/>
+                <!-- Antennae -->
+                <polyline points="60,28 55,18 50,14" stroke="#d4a373" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="50" cy="14" r="2.5" fill="#d4a373"/>
+                <polyline points="70,28 75,18 80,14" stroke="#d4a373" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="80" cy="14" r="2.5" fill="#d4a373"/>
+                <!-- Label underneath -->
+                <text x="65" y="103" text-anchor="middle" font-family="monospace" font-size="8" fill="#d4a373" opacity="0.6">BYTE v0.1</text>
+                <line x1="35" y1="95" x2="95" y2="95" stroke="#d4a373" stroke-width="0.6" opacity="0.25"/>
+              </svg>
+            </div>
+
+            <!-- Speech bubble from bug -->
+            <div class="speech-bubble" style="font-size:0.78rem; max-width:200px; text-align:left">
+              "That idea needs sharper edges. What's the actual problem?"
+            </div>
+          </div>
+
+          <!-- Right: copy -->
+          <div class="fc-disclosure__text">
+            <h2 id="fc-disclosure-heading" style="font-family:var(--font-head); font-size:1.35rem; font-weight:700; color:var(--text-primary); margin-bottom:1.25rem; letter-spacing:-0.02em;">
+              A thinking partner, not a co-founder
+            </h2>
+
+            <p class="fc-disclosure__intro">
+              Somewhere along the way, I started using an AI assistant as a thinking partner.
+            </p>
+
+            <ul class="fc-disclosure__list">
+              <li>It challenged unclear ideas.</li>
+              <li>It turned scattered thoughts into structures.</li>
+              <li>It helped convert raw delivery pain into product language.</li>
+              <li>It pushed me to ask better questions.</li>
+            </ul>
+
+            <p style="font-size:0.88rem; color:var(--text-sec); margin-bottom:1.25rem; font-style:italic;">
+              But let's be precise about what that means.
+            </p>
+
+            <ul class="fc-disclosure__negation">
+              <li>Not a cofounder.</li>
+              <li>Not a person.</li>
+              <li>Not a replacement for lived experience.</li>
+            </ul>
+
+            <p class="fc-disclosure__mirror">
+              Just a persistent mirror that helped sharpen the idea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fc-stripe"></div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PANEL 6 — THE JOURNEY (TIMELINE)
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="fc-timeline" aria-labelledby="fc-timeline-heading">
+      <div class="fc-timeline__inner">
+
+        <div class="fc-timeline__header fc-reveal">
+          <p class="fc-timeline__label" aria-hidden="true">◈ The Journey</p>
+          <h2 id="fc-timeline-heading" class="fc-timeline__title">From Frustration to Clarity</h2>
+        </div>
+
+        <div class="fc-timeline__track" id="timeline-track" role="list">
+
+          <!-- Node 1 — Early career -->
+          <div class="tl-node fc-reveal" role="listitem">
+            <div class="tl-node__left">
+              <div class="tl-node__photo" aria-label="Photo slot: Early career">
+                <div class="tl-node__photo-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>Early career photo</span>
+                </div>
+              </div>
+            </div>
+            <div class="tl-node__center">
+              <div class="tl-node__dot" id="dot-1"></div>
+            </div>
+            <div class="tl-node__right">
+              <div class="tl-node__content">
+                <div class="tl-node__year">Early career</div>
+                <h3 class="tl-node__label">Learning how organisations actually work</h3>
+                <p class="tl-node__desc">
+                  The beginning. Delivery roles, teams, processes. The first encounters with institutional knowledge that lived in people's heads — not in any document.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 2 — Delivery years -->
+          <div class="tl-node tl-node--right fc-reveal fc-reveal--d1" role="listitem">
+            <div class="tl-node__left">
+              <div class="tl-node__content" style="text-align:right">
+                <div class="tl-node__year">Delivery years</div>
+                <h3 class="tl-node__label">The cost of role transitions</h3>
+                <p class="tl-node__desc">
+                  Years of watching projects slow down, teams restart, and context evaporate every time a key person moved on. The problem wasn't talent — it was memory.
+                </p>
+                <span class="tl-node__bug-tag">
+                  <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="#d4a373" stroke-width="1.2"/></svg>
+                  Insight forming
+                </span>
+              </div>
+            </div>
+            <div class="tl-node__center">
+              <div class="tl-node__dot" id="dot-2"></div>
+            </div>
+            <div class="tl-node__right">
+              <div class="tl-node__photo" aria-label="Photo slot: Delivery years">
+                <div class="tl-node__photo-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>Delivery years photo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 3 — Systems years -->
+          <div class="tl-node fc-reveal fc-reveal--d2" role="listitem">
+            <div class="tl-node__left">
+              <div class="tl-node__photo" aria-label="Photo slot: Systems work">
+                <div class="tl-node__photo-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>Systems years photo</span>
+                </div>
+              </div>
+            </div>
+            <div class="tl-node__center">
+              <div class="tl-node__dot" id="dot-3"></div>
+            </div>
+            <div class="tl-node__right">
+              <div class="tl-node__content">
+                <div class="tl-node__year">Enterprise systems</div>
+                <h3 class="tl-node__label">Building for organisations at scale</h3>
+                <p class="tl-node__desc">
+                  Working at the intersection of people, process, and technology. Enterprise architecture. Operational continuity. The patterns started becoming visible.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 4 — AI bug moment -->
+          <div class="tl-node tl-node--right fc-reveal fc-reveal--d1" role="listitem">
+            <div class="tl-node__left">
+              <div class="tl-node__content" style="text-align:right">
+                <div class="tl-node__year">The moment</div>
+                <h3 class="tl-node__label">The AI bug bit</h3>
+                <p class="tl-node__desc">
+                  One conversation with an AI assistant started a cascade. It didn't give me the idea — it helped me see the idea I'd been circling for years. The frustration finally had a shape.
+                </p>
+                <span class="tl-node__bug-tag">
+                  <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="#d4a373" stroke="none" opacity="0.8"/></svg>
+                  The AI bug bites
+                </span>
+              </div>
+            </div>
+            <div class="tl-node__center">
+              <div class="tl-node__dot is-active" id="dot-4"></div>
+            </div>
+            <div class="tl-node__right">
+              <!-- Mini AI Bug SVG for this node -->
+              <div style="padding:1.5rem; display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+                <svg width="90" height="95" viewBox="0 0 130 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="filter:drop-shadow(0 0 8px rgba(212,163,115,0.5))">
+                  <g stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="49,49 32,38 18,32"/>
+                    <circle cx="18" cy="32" r="2.5" fill="#d4a373" stroke="none"/>
+                    <polyline points="49,55 28,53 15,47"/>
+                    <circle cx="15" cy="47" r="2.5" fill="#d4a373" stroke="none"/>
+                    <polyline points="49,61 30,64 18,60"/>
+                    <circle cx="18" cy="60" r="2.5" fill="#d4a373" stroke="none"/>
+                    <polyline points="52,69 34,76 22,74"/>
+                    <circle cx="22" cy="74" r="2.5" fill="#d4a373" stroke="none"/>
+                  </g>
+                  <g stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="81,49 98,38 112,32"/>
+                    <circle cx="112" cy="32" r="2.5" fill="#d4a373" stroke="none"/>
+                    <polyline points="81,55 102,53 115,47"/>
+                    <circle cx="115" cy="47" r="2.5" fill="#d4a373" stroke="none"/>
+                    <polyline points="81,61 100,64 112,60"/>
+                    <circle cx="112" cy="60" r="2.5" fill="#d4a373" stroke="none"/>
+                    <polyline points="78,69 96,76 108,74"/>
+                    <circle cx="108" cy="74" r="2.5" fill="#d4a373" stroke="none"/>
+                  </g>
+                  <ellipse cx="65" cy="74" rx="10" ry="14" fill="#18181b" stroke="#d4a373" stroke-width="1.5"/>
+                  <polygon points="65,34 81,43 81,61 65,70 49,61 49,43" fill="#18181b" stroke="#d4a373" stroke-width="1.8"/>
+                  <rect x="55" y="47" width="20" height="12" rx="1.5" fill="none" stroke="#d4a373" stroke-width="0.7" opacity="0.4"/>
+                  <ellipse cx="65" cy="36" rx="9" ry="8" fill="#1a1a1f" stroke="#d4a373" stroke-width="1.5"/>
+                  <circle cx="60" cy="34" r="3" fill="#f2c14e"/>
+                  <circle cx="70" cy="34" r="3" fill="#f2c14e"/>
+                  <circle cx="61" cy="33" r="1.2" fill="#0a0a0f"/>
+                  <circle cx="71" cy="33" r="1.2" fill="#0a0a0f"/>
+                  <polyline points="60,28 55,18 50,14" stroke="#d4a373" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="50" cy="14" r="2.5" fill="#d4a373"/>
+                  <polyline points="70,28 75,18 80,14" stroke="#d4a373" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="80" cy="14" r="2.5" fill="#d4a373"/>
+                </svg>
+                <span class="comic-impact" style="font-size:1.6rem; transform:rotate(4deg)" aria-hidden="true">CLICK!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 5 — Clear vision -->
+          <div class="tl-node fc-reveal fc-reveal--d2" role="listitem">
+            <div class="tl-node__left">
+              <div class="tl-node__photo" aria-label="Photo slot: Clear vision / standing independently">
+                <div class="tl-node__photo-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>Today photo</span>
+                </div>
+              </div>
+            </div>
+            <div class="tl-node__center">
+              <div class="tl-node__dot is-active" id="dot-5"></div>
+            </div>
+            <div class="tl-node__right">
+              <div class="tl-node__content">
+                <div class="tl-node__year">Now</div>
+                <h3 class="tl-node__label">Standing independently — and still building</h3>
+                <p class="tl-node__desc">
+                  RolegacyAI is in active discovery. The idea has a shape. The problem is real. The next step is finding the right organisations to validate it with.
+                </p>
+                <span class="tl-node__bug-tag">
+                  <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="#d4a373" stroke="none"/><circle cx="5" cy="5" r="1.5" fill="#0a0a0f" stroke="none"/></svg>
+                  In discovery
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="fc-stripe"></div>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         PANEL 7 — CLOSING
+    ════════════════════════════════════════════════════════════════ -->
+    <section class="fc-closing" aria-labelledby="fc-closing-heading">
+      <div class="fc-closing__panel fc-reveal">
+        <span class="panel-num">FINAL</span>
+
+        <!-- Small AI bug in "resolved" pose — eyes glowing gold -->
+        <svg class="fc-closing__bug ai-bug" width="80" height="88" viewBox="0 0 130 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="49,49 32,38 18,32"/><circle cx="18" cy="32" r="2.5" fill="#d4a373" stroke="none"/>
+            <polyline points="49,55 28,53 15,47"/><circle cx="15" cy="47" r="2.5" fill="#d4a373" stroke="none"/>
+            <polyline points="49,61 30,64 18,60"/><circle cx="18" cy="60" r="2.5" fill="#d4a373" stroke="none"/>
+            <polyline points="52,69 34,76 22,74"/><circle cx="22" cy="74" r="2.5" fill="#d4a373" stroke="none"/>
+          </g>
+          <g stroke="#d4a373" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="81,49 98,38 112,32"/><circle cx="112" cy="32" r="2.5" fill="#d4a373" stroke="none"/>
+            <polyline points="81,55 102,53 115,47"/><circle cx="115" cy="47" r="2.5" fill="#d4a373" stroke="none"/>
+            <polyline points="81,61 100,64 112,60"/><circle cx="112" cy="60" r="2.5" fill="#d4a373" stroke="none"/>
+            <polyline points="78,69 96,76 108,74"/><circle cx="108" cy="74" r="2.5" fill="#d4a373" stroke="none"/>
+          </g>
+          <ellipse cx="65" cy="74" rx="10" ry="14" fill="#18181b" stroke="#d4a373" stroke-width="1.5"/>
+          <polygon points="65,34 81,43 81,61 65,70 49,61 49,43" fill="#18181b" stroke="#d4a373" stroke-width="1.8"/>
+          <ellipse cx="65" cy="36" rx="9" ry="8" fill="#1a1a1f" stroke="#d4a373" stroke-width="1.5"/>
+          <circle cx="60" cy="34" r="4" fill="#f2c14e"/>
+          <circle cx="70" cy="34" r="4" fill="#f2c14e"/>
+          <circle cx="61" cy="32.5" r="1.5" fill="#0a0a0f"/>
+          <circle cx="71" cy="32.5" r="1.5" fill="#0a0a0f"/>
+          <polyline points="60,28 55,18 50,14" stroke="#d4a373" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="14" r="3" fill="#f2c14e"/>
+          <polyline points="70,28 75,18 80,14" stroke="#d4a373" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="80" cy="14" r="3" fill="#f2c14e"/>
+        </svg>
+
+        <h2 id="fc-closing-heading" style="font-family:var(--font-head); font-size:clamp(1.4rem,3vw,2rem); font-weight:700; letter-spacing:-0.02em; color:var(--text-primary); margin-bottom:1.5rem; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.25">
+          Not another chatbot.<br>A practical way to preserve what matters.
+        </h2>
+
+        <p class="fc-closing__text">
+          RolegacyAI is not trying to become another chatbot.
+        </p>
+        <p class="fc-closing__text">
+          It is being shaped as a practical way to preserve <strong>role memory</strong>, <strong>successor readiness</strong>, <strong>operational continuity</strong>, and <strong>institutional knowledge</strong> — before expertise walks out the door.
+        </p>
+        <p class="fc-closing__text" style="margin-top:1.25rem; font-size:0.9rem; color:rgba(161,161,170,0.7);">
+          We're in discovery. We're talking to people who feel this problem. If that's you — we'd like to speak.
+        </p>
+
+        <div class="fc-closing__cta">
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="btn btn--primary">
+            Start a Conversation
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="display:inline;vertical-align:middle;margin-left:6px">
+              <path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/" class="btn btn--ghost">Explore the platform</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="RolegacyAI home">
+            <svg class="nav__logo-mark" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="8" r="4" stroke="#d4a373" stroke-width="1.5" fill="none"/>
+              <line x1="14" y1="12" x2="14" y2="20" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="20" y2="15" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="9" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="20" x2="19" y2="27" stroke="#d4a373" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nav__logo-text">RolegacyAI</span>
+          </a>
+          <p class="footer__tagline">Every role leaves one.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="/architecture">Architecture</a></li>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/prototype.html">Prototype</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry">Partner With Us</a></li>
+            <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">&copy; <span id="footer-year"></span> RolegacyAI. All rights reserved.</p>
+        <p class="footer__legal footer__legal--right">Role-scoped institutional memory platform &mdash; in discovery</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>
+    // Footer year
+    const yr = document.getElementById('footer-year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.fc-reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Timeline line draw animation
+    const track = document.getElementById('timeline-track');
+    if (track && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const dots = track.querySelectorAll('.tl-node__dot');
+      const tlIo = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const idx = Array.from(dots).indexOf(e.target);
+            const pct = Math.round(((idx + 1) / dots.length) * 100);
+            track.style.setProperty('--line-progress', pct + '%');
+          }
+        });
+      }, { threshold: 0.5 });
+      dots.forEach(dot => tlIo.observe(dot));
+    }
+  </script>
+</body>
+</html>
