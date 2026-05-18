@@ -47,3 +47,8 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Test artifacts
+test-results/
+playwright-report/
+attached_assets/
