@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RolegacyAI कैसे काम करता है — परिचालन निरंतरता संरचना</title>
-  <meta name="description" content="देखें कि RolegacyAI वर्कफ़्लो इंटेलिजेंस और भूमिका कौशल पैक के माध्यम से भूमिका स्मृति कैसे कैप्चर करता है, संस्थागत ज्ञान को संरचित करता है और उत्तराधिकारी तैयारी बनाता है।" />
+  <title>RolegacyAI संरचना — उद्यम भूमिकाओं के लिए परिचालन निरंतरता परत</title>
+  <meta name="description" content="RolegacyAI की स्तरित संरचना कैसे संस्थागत भूमिका ज्ञान को कैप्चर, वर्गीकृत और प्रस्तुत करती है — संक्रमण होने से पहले उत्तराधिकारी तैयारी बनाती है।" />
   <link rel="canonical" href="https://rolegacyai.com/hi/architecture/" />
   <link rel="alternate" hreflang="x-default" href="https://rolegacyai.com/architecture" />
-  <link rel="alternate" hreflang="en" href="https://rolegacyai.com/architecture" />
+  <link rel="alternate" hreflang="en"    href="https://rolegacyai.com/architecture" />
   <link rel="alternate" hreflang="zh-CN" href="https://rolegacyai.com/zh/architecture/" />
-  <link rel="alternate" hreflang="hi" href="https://rolegacyai.com/hi/architecture/" />
-  <link rel="alternate" hreflang="mr" href="https://rolegacyai.com/mr/architecture/" />
+  <link rel="alternate" hreflang="hi"    href="https://rolegacyai.com/hi/architecture/" />
+  <link rel="alternate" hreflang="mr"    href="https://rolegacyai.com/mr/architecture/" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="RolegacyAI कैसे काम करता है — परिचालन निरंतरता संरचना" />
-  <meta property="og:description" content="देखें कि RolegacyAI वर्कफ़्लो इंटेलिजेंस और भूमिका कौशल पैक के माध्यम से भूमिका स्मृति कैसे कैप्चर करता है, संस्थागत ज्ञान को संरचित करता है और उत्तराधिकारी तैयारी बनाता है।" />
+  <meta property="og:title" content="RolegacyAI संरचना — उद्यम भूमिकाओं के लिए परिचालन निरंतरता परत" />
+  <meta property="og:description" content="RolegacyAI की स्तरित संरचना कैसे संस्थागत भूमिका ज्ञान को कैप्चर, वर्गीकृत और प्रस्तुत करती है — संक्रमण होने से पहले उत्तराधिकारी तैयारी बनाती है।" />
   <meta property="og:url" content="https://rolegacyai.com/hi/architecture/" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -21,19 +21,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
-
   <style>
-    .lang-sw { display:inline-flex; align-items:center; gap:2px; padding:3px; border:1px solid rgba(228,229,228,0.12); border-radius:999px; background:rgba(15,15,16,0.88); backdrop-filter:blur(10px); flex-shrink:0; margin-left:0.5rem; }
-    .lang-sw__btn { border:0; border-radius:999px; padding:0.32rem 0.5rem; background:transparent; color:#a1a1aa; font-family:'Space Grotesk',system-ui,sans-serif; font-size:0.72rem; font-weight:700; cursor:pointer; transition:background .2s,color .2s; text-decoration:none; line-height:1; }
-    .lang-sw__btn:hover { color:#f4f4f5; }
-    .lang-sw__btn--active { background:#d4a373; color:#0f0f10; }
-    @media(max-width:768px){ .lang-sw { margin-left:0; margin-top:0.5rem; } }
+    .lang-sw{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(228,229,228,0.12);border-radius:999px;background:rgba(15,15,16,0.88);backdrop-filter:blur(10px);flex-shrink:0;margin-left:0.5rem}
+    .lang-sw__btn{border:0;border-radius:999px;padding:0.32rem 0.5rem;background:transparent;color:#a1a1aa;font-family:'Space Grotesk',system-ui,sans-serif;font-size:0.72rem;font-weight:700;cursor:pointer;transition:background .2s,color .2s;text-decoration:none;line-height:1}
+    .lang-sw__btn:hover{color:#f4f4f5}
+    .lang-sw__btn--active{background:#d4a373;color:#0f0f10}
+    @media(max-width:768px){.lang-sw{margin-left:0;margin-top:0.5rem}}
   </style>
   <style>
-    .page-hero{padding:7rem 0 3rem;border-bottom:1px solid var(--border)}
+    .page-hero{padding:7rem 0 3.5rem;border-bottom:1px solid var(--border)}
     .page-hero__eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}
     .page-hero__title{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem}
-    .page-hero__desc{font-size:1.15rem;color:var(--text-sec);max-width:640px;line-height:1.7}
+    .page-hero__desc{font-size:1.15rem;color:var(--text-sec);max-width:640px;line-height:1.7;margin-bottom:2rem}
+    .page-hero__actions{display:flex;gap:1rem;flex-wrap:wrap}
+    .arch-section{padding:4rem 0;border-top:1px solid var(--border)}
+    .arch-section__label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem}
+    .arch-section__title{font-family:var(--font-head);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;letter-spacing:-.02em;margin-bottom:.75rem}
+    .arch-section__desc{font-size:1rem;color:var(--text-sec);line-height:1.7;max-width:600px}
+    .arch-section-header{margin-bottom:2.5rem}
     .arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
     .arch-layer{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;gap:1rem;transition:border-color .2s}
     .arch-layer:hover{border-color:rgba(212,163,115,0.25)}
@@ -44,7 +49,7 @@
     .arch-layer__desc{font-size:.78rem;color:var(--text-sec);line-height:1.55;margin-bottom:.5rem}
     .arch-layer__cat{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);opacity:.7}
     @media(max-width:900px){.arch-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.arch-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){.arch-grid{grid-template-columns:1fr}.page-hero__actions{flex-direction:column}}
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
@@ -72,207 +77,401 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="/hi/#how-it-works">यह कैसे काम करता है</a></li>
         <li><a href="/hi/story/">कहानी</a></li>
-        <li><a href="/hi/architecture/">संरचना</a></li>
+        <li><a href="/hi/architecture/" aria-current="page">संरचना</a></li>
         <li><a href="/hi/blog/">अंतर्दृष्टि</a></li>
-        <li><a href="/hi/#report">रिपोर्ट</a></li>
-        <li><a href="/hi/prototype/">प्रोटोटाइप</a></li>
         <li>
           <button class="nav__patent-btn" id="patent-btn" aria-haspopup="dialog" aria-controls="patent-modal" type="button">Patent Pending</button>
         </li>
         <li>
-          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="nav__cta">बातचीत शुरू करें</a>
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="nav__cta">रुचि दर्ज करें</a>
         </li>
       </ul>
       <div class="lang-sw" role="navigation" aria-label="Language switcher">
-          <a href="/architecture" class="lang-sw__btn" hreflang="en" aria-label="Switch to EN">EN</a><a href="/zh/architecture/" class="lang-sw__btn" hreflang="zh-CN" aria-label="Switch to 中文">中文</a><a href="/hi/architecture/" class="lang-sw__btn lang-sw__btn--active" hreflang="hi" aria-label="Switch to हिन्दी">हिन्दी</a><a href="/mr/architecture/" class="lang-sw__btn" hreflang="mr" aria-label="Switch to मराठी">मराठी</a>
-        </div>
+        <a href="/architecture" class="lang-sw__btn" hreflang="en" aria-label="Switch to EN">EN</a><a href="/zh/architecture/" class="lang-sw__btn" hreflang="zh-CN" aria-label="Switch to 中文">中文</a><a href="/hi/architecture/" class="lang-sw__btn lang-sw__btn--active" hreflang="hi" aria-label="Switch to हिन्दी">हिन्दी</a><a href="/mr/architecture/" class="lang-sw__btn" hreflang="mr" aria-label="Switch to मराठी">मराठी</a>
+      </div>
     </nav>
   </header>
+
   <main id="main-content">
+
+    <!-- HERO -->
     <section class="page-hero">
       <div class="container">
         <p class="page-hero__eyebrow">संरचना</p>
-        <h1 class="page-hero__title">RolegacyAI कैसे काम करता है</h1>
-        <p class="page-hero__desc">RolegacyAI एक स्तरित वास्तुकला के रूप में बनाया गया है — जिस क्षण से भूमिका ज्ञान कैप्चर होता है, वर्गीकरण और स्वच्छता के माध्यम से, पुनर्प्राप्ति, स्कोरिंग तक, और उत्तराधिकारी संक्षेप के निर्माण तक।</p>
+        <h1 class="page-hero__title">RolegacyAI संरचना</h1>
+        <p class="page-hero__desc">RolegacyAI एक परिचालन निरंतरता परत है — संस्थागत ज्ञान रखने वाले लोगों और उस पर निर्भर संगठनों के बीच निर्मित। जब कोई भूमिका धारक छोड़ता है, सेवानिवृत्त होता है, या स्थानांतरित होता है, तो उनका संचित ज्ञान उनके साथ जाने की जरूरत नहीं है।</p>
+        <div class="page-hero__actions">
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="btn btn--primary">रुचि दर्ज करें</a>
+          <a href="/hi/blog/" class="btn btn--ghost">अंतर्दृष्टि पढ़ें →</a>
+        </div>
       </div>
     </section>
-    <section style="padding:3rem 0 5rem;border-top:1px solid var(--border)">
+
+    <!-- SYSTEM FLOW -->
+    <section class="arch-section">
       <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">प्रणाली प्रवाह</p>
+          <h2 class="arch-section__title">भूमिका गतिविधि से उत्तराधिकारी तैयारी तक</h2>
+          <p class="arch-section__desc">पाँच वास्तुकला चरण दैनिक भूमिका गतिविधि को एक संरचित, हस्तांतरणीय संस्थागत स्मृति में बदलते हैं — संक्रमण होने से पहले अगले व्यक्ति के लिए तैयार।</p>
+        </div>
+        <div class="arch-flow reveal reveal--delay-1">
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div class="arch-flow__label">कैप्चर</div>
+            <div class="arch-flow__sub">दस्तावेज़, बैठकें, वर्कफ़्लो, इनपुट</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <div class="arch-flow__label">वर्गीकृत और स्वच्छ</div>
+            <div class="arch-flow__sub">वर्गीकरण लागू, व्यक्तिगत डेटा हटाया</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/></svg>
+            </div>
+            <div class="arch-flow__label">संग्रहित</div>
+            <div class="arch-flow__sub">भूमिका स्मृति संरक्षित, संस्करणित, ग्राफ-लिंक्ड</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="arch-flow__label">स्कोर और पुनर्प्राप्त</div>
+            <div class="arch-flow__sub">RAG के माध्यम से विश्वास, कवरेज, जोखिम</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="arch-flow__label">उपस्थित</div>
+            <div class="arch-flow__sub">उत्तराधिकारी संक्षेप, तैयारी स्कोर, AI सहायक</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEVEN CORE CAPABILITIES -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">मुख्य क्षमताएं</p>
+          <h2 class="arch-section__title">सात क्षमताएं, एक निरंतरता परिणाम</h2>
+          <p class="arch-section__desc">प्रत्येक क्षमता ज्ञान निरंतरता समस्या के एक अलग हिस्से को हल करती है। साथ मिलकर वे एक ऐसी भूमिका स्मृति बनाती हैं जिसे उत्तराधिकारी वास्तव में उपयोग कर सकता है।</p>
+        </div>
+        <div class="arch-core">
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">01 — ज्ञान कैप्चर</div>
+            <h3 class="arch-core__title">कैप्चर इंजन</h3>
+            <p class="arch-core__desc">दस्तावेज़ों, बैठक नोट्स, वर्कफ़्लो और संरचित इनपुट से भूमिका ज्ञान ग्रहण करता है। असंरचित गतिविधि को एक सामान्यीकृत, मशीन-पठनीय प्रारूप में परिवर्तित करता है जिसे डाउनस्ट्रीम परतें वर्गीकृत और संग्रहीत कर सकती हैं।</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-1">
+            <div class="arch-core__num">02 — वर्गीकरण</div>
+            <h3 class="arch-core__title">वर्गीकरण इंजन</h3>
+            <p class="arch-core__desc">प्रत्येक कैप्चर की गई स्मृति प्रविष्टि पर एक संरचित वर्गीकरण लागू करता है — निर्णय, सबक, समाधान, प्रक्रियाएं, संबंध, जोखिम संकेत। किसी भी भूमिका या टीम में संस्थागत रिकॉर्ड को नेविगेट करने योग्य और क्वेरी करने योग्य बनाता है।</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-2">
+            <div class="arch-core__num">03 — सुरक्षा</div>
+            <h3 class="arch-core__title">स्वच्छता इंजन</h3>
+            <p class="arch-core__desc">कुछ भी संग्रहीत होने से पहले संस्थागत ज्ञान को व्यक्तिगत जानकारी से अलग करता है। संवेदनशील सामग्री को हटाता है और सुनिश्चित करता है कि भूमिका स्मृति सुरक्षित रूप से बनाए रखी, साझा और ऑडिट की जा सके — बिना निवर्तमान कर्मचारी की गोपनीयता से समझौता किए।</p>
+          </div>
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">04 — उत्तराधिकारी तैयारी</div>
+            <h3 class="arch-core__title">उत्तराधिकारी संक्षेप जनरेटर</h3>
+            <p class="arch-core__desc">वह संरचित हैंडऑफ़ दस्तावेज़ बनाता है जो उत्तराधिकारी को भूमिका संभालने पर विरासत में मिलता है। एक सामान्य AI सारांश नहीं — सत्यापित स्मृति से निकाला गया, पूर्णता के लिए स्कोर किया गया, और आने वाले व्यक्ति के संदर्भ के अनुसार तैयार किया गया भूमिका-विशिष्ट संक्षेप।</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-1">
+            <div class="arch-core__num">05 — स्कोरिंग</div>
+            <h3 class="arch-core__title">विश्वास और कवरेज स्कोरिंग</h3>
+            <p class="arch-core__desc">प्रत्येक स्मृति प्रविष्टि स्रोत विश्वसनीयता, पुष्टि, हालियापन और मानव सत्यापन के आधार पर विश्वास स्कोर के साथ आती है। कवरेज स्कोरिंग मापती है कि एक भूमिका के ज्ञान डोमेन कितने पूरी तरह से दस्तावेज़ीकृत हैं — और उन अंतरों को सामने लाती है जिन्हें भरने की आवश्यकता है।</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-2">
+            <div class="arch-core__num">06 — वास्तुकला</div>
+            <h3 class="arch-core__title">मानव सत्यापन लूप</h3>
+            <p class="arch-core__desc">प्रत्येक AI-निकाली गई स्मृति प्रविष्टि सत्यापित रिकॉर्ड में प्रवेश करने से पहले एक मानव समीक्षा चरण से गुजरती है। भूमिका धारक और विषय-विशेषज्ञ प्रविष्टियों को अनुमोदित, सुधार या अस्वीकार कर सकते हैं — बड़े पैमाने पर संस्थागत स्मृति को विश्वसनीय रखते हैं।</p>
+          </div>
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">07 — AI उत्थान</div>
+            <h3 class="arch-core__title">AI उत्थान माप</h3>
+            <p class="arch-core__desc">भूमिका धारक द्वारा समय के साथ विकसित AI-उन्नत वर्कफ़्लो को कैप्चर और स्थानांतरित करता है — प्रॉम्प्ट लाइब्रेरी, एजेंट कॉन्फ़िगरेशन और उत्पादकता पैटर्न। जब वे जाते हैं, तो उनका AI उत्थान उत्तराधिकारी के लिए संरक्षित होता है, व्यक्ति के साथ खो नहीं जाता।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE DEEP DIVE -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">वास्तुकला गहरी समझ</p>
+          <h2 class="arch-section__title">सभी 20 वास्तुकला घटक</h2>
+          <p class="arch-section__desc">पूर्ण तकनीकी संदर्भ — वेक्टर एम्बेडिंग से एजेंटिक वर्कफ़्लो तक RolegacyAI वास्तुकला की हर परत।</p>
+        </div>
         <div class="arch-grid">
           <div class="arch-layer reveal">
             <div class="arch-layer__num">01</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/capture-engine">कैप्चर इंजन</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI captures role knowledge from documents, meetings, workflows, and structured inputs — and turns it into structured institutional memory.</p>
-              <span class="arch-layer__cat">Knowledge Capture</span>
+              <p class="arch-layer__desc">RolegacyAI दस्तावेज़ों, बैठकों, वर्कफ़्लो और संरचित इनपुट से भूमिका ज्ञान कैसे कैप्चर करता है — और इसे संरचित संस्थागत स्मृति में कैसे बदलता है।</p>
+              <span class="arch-layer__cat">ज्ञान कैप्चर</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">02</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/classification-engine">वर्गीकरण इंजन</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI classifies captured role knowledge into a structured taxonomy — decisions, lessons, workarounds, processes, relationships, and more.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI कैप्चर किए गए भूमिका ज्ञान को एक संरचित वर्गीकरण में कैसे वर्गीकृत करता है — निर्णय, सबक, समाधान, प्रक्रियाएं, संबंध और अधिक।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">03</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/sanitisation-engine">स्वच्छता इंजन</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI separates institutional knowledge from personal information, removes sensitive content, and ensures role memory is safe to store and share.</p>
-              <span class="arch-layer__cat">Security</span>
+              <p class="arch-layer__desc">RolegacyAI संस्थागत ज्ञान को व्यक्तिगत जानकारी से कैसे अलग करता है, संवेदनशील सामग्री को हटाता है और सुनिश्चित करता है कि भूमिका स्मृति संग्रहीत और साझा करने के लिए सुरक्षित है।</p>
+              <span class="arch-layer__cat">सुरक्षा</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">04</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/personal-role-layer">व्यक्तिगत भूमिका परत</a></h3>
-              <p class="arch-layer__desc">The technical and conceptual boundary between a role holder's personal knowledge and the institutional knowledge that belongs to the role — and how RolegacyAI manages it.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">भूमिका धारक के व्यक्तिगत ज्ञान और भूमिका से संबंधित संस्थागत ज्ञान के बीच तकनीकी और वैचारिक सीमा — और RolegacyAI इसे कैसे प्रबंधित करता है।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">05</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/rag-engine">RAG इंजन</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI uses Retrieval Augmented Generation to surface relevant role memories in context — powering the successor brief, AI assistant, and onboarding tools.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI प्रासंगिक भूमिका स्मृतियों को संदर्भ में सतह पर लाने के लिए Retrieval Augmented Generation का उपयोग कैसे करता है — उत्तराधिकारी संक्षेप, AI सहायक और ऑनबोर्डिंग टूल को सशक्त बनाता है।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">06</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/confidence-scoring">विश्वास स्कोरिंग</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI scores confidence in each memory entry based on source reliability, corroboration, recency, and human validation — and how that score drives review and retrieval.</p>
-              <span class="arch-layer__cat">Scoring</span>
+              <p class="arch-layer__desc">RolegacyAI स्रोत विश्वसनीयता, पुष्टि, हालियापन और मानव सत्यापन के आधार पर प्रत्येक स्मृति प्रविष्टि में विश्वास स्कोर कैसे करता है — और वह स्कोर समीक्षा और पुनर्प्राप्ति को कैसे प्रेरित करता है।</p>
+              <span class="arch-layer__cat">स्कोरिंग</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">07</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/coverage-scoring">कवरेज स्कोरिंग</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI measures how completely a role's knowledge domains are documented — and uses gap identification to improve successor readiness.</p>
-              <span class="arch-layer__cat">Scoring</span>
+              <p class="arch-layer__desc">RolegacyAI कैसे मापता है कि किसी भूमिका के ज्ञान डोमेन कितने पूरी तरह से दस्तावेज़ीकृत हैं — और उत्तराधिकारी तैयारी में सुधार के लिए अंतर पहचान का उपयोग करता है।</p>
+              <span class="arch-layer__cat">स्कोरिंग</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">08</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/successor-brief-generator">उत्तराधिकारी संक्षेप जनरेटर</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI generates the structured handoff document that a successor inherits when they take over a role — and what makes it different from a generic AI summary.</p>
-              <span class="arch-layer__cat">Successor Readiness</span>
+              <p class="arch-layer__desc">RolegacyAI संरचित हैंडऑफ़ दस्तावेज़ कैसे बनाता है जो उत्तराधिकारी को भूमिका संभालने पर विरासत में मिलती है — और यह एक सामान्य AI सारांश से अलग क्यों है।</p>
+              <span class="arch-layer__cat">उत्तराधिकारी तैयारी</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">09</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/role-risk-score">भूमिका जोखिम स्कोर</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI calculates the knowledge continuity risk for any role — and how organisations use it to prioritise where to invest in memory capture before it's too late.</p>
-              <span class="arch-layer__cat">Scoring</span>
+              <p class="arch-layer__desc">RolegacyAI किसी भी भूमिका के लिए ज्ञान निरंतरता जोखिम की गणना कैसे करता है — और संगठन इसका उपयोग यह प्राथमिकता देने के लिए कैसे करते हैं कि बहुत देर होने से पहले स्मृति कैप्चर में कहाँ निवेश करना है।</p>
+              <span class="arch-layer__cat">स्कोरिंग</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">10</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/ai-uplift-measurement">AI उत्थान माप</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI measures the efficiency and capability improvements that AI tools create at the role level — making the invisible visible and preserving the improvement for successors.</p>
-              <span class="arch-layer__cat">AI Uplift</span>
+              <p class="arch-layer__desc">RolegacyAI AI टूल द्वारा भूमिका स्तर पर बनाए गए दक्षता और क्षमता सुधारों को कैसे मापता है — अदृश्य को दृश्यमान बनाता है और उत्तराधिकारियों के लिए सुधार को संरक्षित करता है।</p>
+              <span class="arch-layer__cat">AI उत्थान</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">11</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/multi-tenant-security">मल्टी-टेनेंट सुरक्षा</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI isolates role memory between organisations, enforces access controls, and maintains the security posture required for enterprise institutional knowledge.</p>
-              <span class="arch-layer__cat">Security</span>
+              <p class="arch-layer__desc">RolegacyAI संगठनों के बीच भूमिका स्मृति को कैसे अलग करता है, पहुँच नियंत्रण लागू करता है, और एंटरप्राइज संस्थागत ज्ञान के लिए आवश्यक सुरक्षा स्थिति बनाए रखता है।</p>
+              <span class="arch-layer__cat">सुरक्षा</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">12</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/human-validation-loop">मानव सत्यापन लूप</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI involves role holders and subject-matter experts in validating, correcting, and approving AI-extracted memories — keeping the institutional record trustworthy.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI भूमिका धारकों और विषय-विशेषज्ञों को AI-निकाली गई स्मृतियों को मान्य करने, सुधारने और अनुमोदित करने में कैसे शामिल करता है — संस्थागत रिकॉर्ड को विश्वसनीय रखता है।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">13</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/knowledge-graph">ज्ञान ग्राफ</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI connects role memories through a structured knowledge graph — enabling relationship traversal, pattern discovery, and richer context for successor briefing.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI एक संरचित ज्ञान ग्राफ के माध्यम से भूमिका स्मृतियों को कैसे जोड़ता है — संबंध ट्रैवर्सल, पैटर्न खोज और उत्तराधिकारी संक्षेप के लिए समृद्ध संदर्भ सक्षम करता है।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">14</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/agentic-workflows">एजेंटिक वर्कफ़्लो</a></h3>
-              <p class="arch-layer__desc">How autonomous agents can use RolegacyAI role memory to complete onboarding tasks, answer successor questions, coordinate transitions, and fill knowledge gaps.</p>
-              <span class="arch-layer__cat">Workflow Intelligence</span>
+              <p class="arch-layer__desc">स्वायत्त एजेंट ऑनबोर्डिंग कार्यों को पूरा करने, उत्तराधिकारी प्रश्नों का उत्तर देने, संक्रमणों का समन्वय करने और ज्ञान अंतराल भरने के लिए RolegacyAI भूमिका स्मृति का उपयोग कैसे कर सकते हैं।</p>
+              <span class="arch-layer__cat">वर्कफ़्लो इंटेलिजेंस</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">15</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/deduplication-engine">डिडुप्लीकेशन इंजन</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI detects, merges, and reconciles duplicate or near-duplicate role memory entries to keep the institutional memory clean, coherent, and trustworthy.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI भूमिका स्मृति प्रविष्टियों में डुप्लीकेट या निकट-डुप्लीकेट को कैसे पहचानता है, मर्ज करता है और सुलझाता है — संस्थागत स्मृति को स्वच्छ, सुसंगत और विश्वसनीय रखता है।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">16</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/api-integrations">API एकीकरण</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI connects to the enterprise tools where role knowledge lives — enabling capture, trigger-based workflows, and role memory consumption across the stack.</p>
-              <span class="arch-layer__cat">Integrations</span>
+              <p class="arch-layer__desc">RolegacyAI उद्यम टूल से कैसे जुड़ता है जहाँ भूमिका ज्ञान रहता है — कैप्चर, ट्रिगर-आधारित वर्कफ़्लो और स्टैक में भूमिका स्मृति खपत सक्षम करता है।</p>
+              <span class="arch-layer__cat">एकीकरण</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">17</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/vector-embeddings">वेक्टर एम्बेडिंग</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI encodes role memories as vector embeddings to enable semantic search, similarity detection, and context-aware retrieval across the institutional memory store.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI सिमेंटिक खोज, समानता पहचान और संस्थागत स्मृति स्टोर में संदर्भ-जागरूक पुनर्प्राप्ति सक्षम करने के लिए भूमिका स्मृतियों को वेक्टर एम्बेडिंग के रूप में कैसे एन्कोड करता है।</p>
+              <span class="arch-layer__cat">वास्तुकला</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">18</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/memory-timeline">स्मृति समयरेखा</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI organises role memories chronologically — providing a navigable history of decisions, transitions, and institutional learning across every holder of a role.</p>
-              <span class="arch-layer__cat">Knowledge Capture</span>
+              <p class="arch-layer__desc">RolegacyAI भूमिका स्मृतियों को कालानुक्रमिक रूप से कैसे व्यवस्थित करता है — भूमिका के प्रत्येक धारक में निर्णयों, संक्रमणों और संस्थागत सीखने का नेविगेट करने योग्य इतिहास प्रदान करता है।</p>
+              <span class="arch-layer__cat">ज्ञान कैप्चर</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">19</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/successor-readiness-score">उत्तराधिकारी तैयारी स्कोर</a></h3>
-              <p class="arch-layer__desc">The composite score that measures how ready a role is for transition — combining coverage, confidence, brief completeness, and knowledge transfer progress into a single operational metric.</p>
-              <span class="arch-layer__cat">Successor Readiness</span>
+              <p class="arch-layer__desc">वह समग्र स्कोर जो मापता है कि एक भूमिका संक्रमण के लिए कितनी तैयार है — कवरेज, विश्वास, संक्षेप पूर्णता और ज्ञान हस्तांतरण प्रगति को एकल परिचालन मीट्रिक में जोड़ता है।</p>
+              <span class="arch-layer__cat">उत्तराधिकारी तैयारी</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">20</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/prompt-engineering">प्रॉम्प्ट इंजीनियरिंग</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI approaches prompt engineering for role memory tasks — from capture and classification to successor brief generation — and how prompt libraries are captured and transferred.</p>
-              <span class="arch-layer__cat">AI Uplift</span>
+              <p class="arch-layer__desc">RolegacyAI भूमिका स्मृति कार्यों के लिए प्रॉम्प्ट इंजीनियरिंग कैसे करता है — कैप्चर और वर्गीकरण से उत्तराधिकारी संक्षेप उत्पादन तक — और प्रॉम्प्ट लाइब्रेरी कैसे कैप्चर और स्थानांतरित की जाती हैं।</p>
+              <span class="arch-layer__cat">AI उत्थान</span>
             </div>
           </div>
         </div>
-        <div style="margin-top:4rem;background:var(--panel);border:1px solid rgba(212,163,115,0.2);border-radius:12px;padding:2rem">
-          <h2 style="font-family:var(--font-head);font-size:1.35rem;font-weight:600;margin-bottom:.75rem">पूरी तस्वीर</h2>
-          <p style="font-size:1rem;color:var(--text-sec);line-height:1.75;max-width:680px;margin-bottom:1.5rem">यदि आपका सबसे अच्छा कर्मचारी कल चला जाए, तो अगले व्यक्ति को क्या विरासत मिलेगी? RolegacyAI इस प्रश्न का उत्तर देता है।</p>
+      </div>
+    </section>
+
+    <!-- ENTERPRISE TRUST -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">एंटरप्राइज ग्रेड</p>
+          <h2 class="arch-section__title">संस्थागत विश्वास के लिए निर्मित</h2>
+          <p class="arch-section__desc">एंटरप्राइज ज्ञान संवेदनशील है। RolegacyAI का हर वास्तुकला निर्णय इसे दर्शाता है।</p>
+        </div>
+        <div class="arch-trust">
+          <div class="arch-trust__item reveal">
+            <div class="arch-trust__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div>
+              <div class="arch-trust__title">मल्टी-टेनेंट अलगाव</div>
+              <p class="arch-trust__desc">प्रत्येक संगठन की भूमिका स्मृति पूरी तरह से अलग है। वास्तुकला की किसी भी परत पर कोई क्रॉस-टेनेंट डेटा एक्सेस नहीं।</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal reveal--delay-1">
+            <div class="arch-trust__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+            <div>
+              <div class="arch-trust__title">डिज़ाइन द्वारा गोपनीयता-प्रथम</div>
+              <p class="arch-trust__desc">व्यक्तिगत जानकारी स्वच्छता परत पर किसी भी स्मृति प्रविष्टि के संग्रहीत होने से पहले हटा दी जाती है। संस्थागत रिकॉर्ड में कोई व्यक्तिगत डेटा नहीं।</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal reveal--delay-2">
+            <div class="arch-trust__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div>
+              <div class="arch-trust__title">लूप में मानव</div>
+              <p class="arch-trust__desc">कोई भी AI निष्कर्षण मानव समीक्षा के बिना सत्यापित रिकॉर्ड में प्रवेश नहीं करता। भूमिका धारक और विषय-विशेषज्ञ हर प्रविष्टि को अनुमोदित करते हैं।</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal">
+            <div class="arch-trust__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 2L15.1 8.3L22 9.3L17 14.1L18.2 21L12 17.8L5.8 21L7 14.1L2 9.3L8.9 8.3L12 2Z"/></svg></div>
+            <div>
+              <div class="arch-trust__title">पेटेंट लंबित वास्तुकला</div>
+              <p class="arch-trust__desc">मुख्य वास्तुकला — व्यक्तिगत भूमिका परत सीमा और उत्तराधिकारी संक्षेप उत्पादन प्रक्रिया सहित — पेटेंट लंबित है।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICALS -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">जहाँ यह लागू होता है</p>
+          <h2 class="arch-section__title">परिचालन रूप से जटिल उद्योगों के लिए निर्मित</h2>
+          <p class="arch-section__desc">RolegacyAI उन वातावरणों के लिए डिज़ाइन किया गया था जहाँ भूमिका ज्ञान को बदलना कठिन है, संक्रमण उच्च-जोखिम हैं, और संस्थागत स्मृति सिस्टम के बजाय लोगों में बैठी है।</p>
+        </div>
+        <div class="arch-verticals">
+          <div class="arch-vertical reveal">
+            <div class="arch-vertical__label">Maximo और EAM टीमें</div>
+            <p class="arch-vertical__sub">संपत्ति प्रबंधन भूमिकाएं जहाँ वर्षों का सिस्टम ज्ञान, समाधान पैटर्न और विक्रेता संबंध निवर्तमान व्यक्ति में बंद हैं।</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-1">
+            <div class="arch-vertical__label">ServiceNow ऑपरेटर</div>
+            <p class="arch-vertical__sub">ITSM और वर्कफ़्लो कॉन्फ़िगरेशन टीमें जिनका प्लेटफ़ॉर्म ज्ञान अदस्तावेज़ीकृत है और मानक हैंडओवर के माध्यम से स्थानांतरित करना असंभव है।</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-2">
+            <div class="arch-vertical__label">परिवहन और बुनियादी ढाँचा</div>
+            <p class="arch-vertical__sub">रेल, बंदरगाह और उपयोगिताओं में दीर्घकालिक परिचालन भूमिकाएं — जहाँ एकल प्रस्थान वर्षों के परियोजना संदर्भ और विक्रेता संबंधों को अटका सकता है।</p>
+          </div>
+          <div class="arch-vertical reveal">
+            <div class="arch-vertical__label">परामर्श और प्रबंधित सेवाएं</div>
+            <p class="arch-vertical__sub">ग्राहक-एम्बेडेड व्यवसायी जो संबंध इतिहास, डिलीवरी पैटर्न और संस्थागत संदर्भ ले जाते हैं जो रोटेशन में नहीं बचता।</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-1">
+            <div class="arch-vertical__label">खनन और संसाधन</div>
+            <p class="arch-vertical__sub">सेवानिवृत्ति के करीब अनुभवी ऑपरेटरों द्वारा रखा गया साइट संचालन, सुरक्षा प्रक्रियाएं और उपकरण-विशिष्ट ज्ञान।</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-2">
+            <div class="arch-vertical__label">एंटरप्राइज डिलीवरी</div>
+            <p class="arch-vertical__sub">कार्यक्रम और डिलीवरी प्रमुख जिनका संदर्भ — हितधारक मानचित्र, जोखिम इतिहास, निर्णय तर्क — अगले प्रोजेक्ट की सफलता निर्धारित करता है।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="reveal" style="background:linear-gradient(135deg,var(--panel) 0%,rgba(212,163,115,0.06) 100%);border:1px solid rgba(212,163,115,0.2);border-radius:16px;padding:3rem;max-width:720px">
+          <p style="font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem">निर्माण के लिए तैयार</p>
+          <h2 style="font-family:var(--font-head);font-size:1.75rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.75rem">यदि आपका सबसे अच्छा व्यक्ति कल चला जाए, तो क्या बचेगा?</h2>
+          <p style="font-size:1rem;color:var(--text-sec);line-height:1.75;max-width:560px;margin-bottom:1.75rem">RolegacyAI इस प्रश्न का उत्तर देता है — संक्रमण होने से पहले भूमिका ज्ञान को दृश्यमान, संरचित और हस्तांतरणीय बनाकर। हम कुछ डिज़ाइन भागीदारों के साथ काम कर रहे हैं।</p>
           <div style="display:flex;gap:1rem;flex-wrap:wrap">
-            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="btn btn--primary">बातचीत शुरू करें</a>
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="btn btn--primary">रुचि दर्ज करें</a>
             <a href="/hi/blog/" class="btn btn--ghost">अंतर्दृष्टि पढ़ें →</a>
           </div>
         </div>
       </div>
     </section>
+
   </main>
+
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
@@ -291,10 +490,11 @@
         </div>
         <nav class="footer__links" aria-label="Footer navigation">
           <ul role="list">
+            <li><a href="/hi/story/">कहानी</a></li>
             <li><a href="/hi/architecture/">संरचना</a></li>
             <li><a href="/hi/blog/">अंतर्दृष्टि</a></li>
             <li><a href="/hi/prototype/">प्रोटोटाइप</a></li>
-            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry">हमसे जुड़ें</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest">रुचि दर्ज करें</a></li>
             <li><a href="mailto:hello@rolegacyai.com">संपर्क</a></li>
           </ul>
         </nav>
@@ -305,6 +505,7 @@
       </div>
     </div>
   </footer>
+
   <div id="patent-modal" class="patent-modal" role="dialog" aria-modal="true" aria-labelledby="patent-modal-title" hidden>
     <div class="patent-modal__backdrop" id="patent-modal-backdrop"></div>
     <div class="patent-modal__card">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How RolegacyAI Works — Operational Continuity Architecture</title>
-  <meta name="description" content="See how RolegacyAI captures role memory, structures institutional knowledge, and creates successor readiness through workflow intelligence and role skill packs." />
+  <title>RolegacyAI Architecture — Operational Continuity Layer for Enterprise Roles</title>
+  <meta name="description" content="How RolegacyAI's layered architecture captures, classifies, and surfaces institutional role knowledge — building successor readiness before transitions happen." />
   <link rel="canonical" href="https://rolegacyai.com/architecture" />
   <link rel="alternate" hreflang="x-default" href="https://rolegacyai.com/architecture" />
   <link rel="alternate" hreflang="en"    href="https://rolegacyai.com/architecture" />
@@ -12,8 +12,8 @@
   <link rel="alternate" hreflang="hi"    href="https://rolegacyai.com/hi/architecture/" />
   <link rel="alternate" hreflang="mr"    href="https://rolegacyai.com/mr/architecture/" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="How RolegacyAI Works — Operational Continuity Architecture" />
-  <meta property="og:description" content="See how RolegacyAI captures role memory, structures institutional knowledge, and creates successor readiness through workflow intelligence and role skill packs." />
+  <meta property="og:title" content="RolegacyAI Architecture — Operational Continuity Layer for Enterprise Roles" />
+  <meta property="og:description" content="How RolegacyAI's layered architecture captures, classifies, and surfaces institutional role knowledge — building successor readiness before transitions happen." />
   <meta property="og:url" content="https://rolegacyai.com/architecture" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,36 +29,27 @@
     gtag('config', 'G-5JPC2N2CP5');
   </script>
   <style>
-    .page-hero { padding: 7rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .page-hero { padding: 7rem 0 3.5rem; border-bottom: 1px solid var(--border); }
     .page-hero__eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
     .page-hero__title { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
-    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; }
-    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: flex-start; padding: 3.5rem 0 5rem; }
-    .article-body h2 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 0.75rem; letter-spacing: -0.02em; }
-    .article-body h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin: 1.75rem 0 0.5rem; color: var(--amber); }
-    .article-body p { font-size: 1rem; color: var(--text-sec); line-height: 1.75; margin-bottom: 1rem; }
-    .article-body ul { padding-left: 1.25rem; margin-bottom: 1rem; }
-    .article-body ul li { font-size: 1rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 0.35rem; list-style: disc; }
-    .article-body ul li::marker { color: var(--amber); }
-    .article-aside { position: sticky; top: 5rem; }
-    .aside-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
-    .aside-card__title { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
-    .aside-card ul { padding: 0; }
-    .aside-card ul li { list-style: none; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-    .aside-card ul li:last-child { border-bottom: none; }
-    .aside-card ul li a { color: var(--text-sec); transition: color 0.2s; }
-    .aside-card ul li a:hover { color: var(--amber); }
-    .article-cta { background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem; margin: 3rem 0 0; }
-    .article-cta h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .article-cta p { font-size: 0.925rem; color: var(--text-sec); margin-bottom: 1.25rem; }
-    .breadcrumb { padding: 5.5rem 0 0; font-size: 0.8rem; color: var(--text-muted, #71717a); }
-    .breadcrumb a { color: var(--text-muted, #71717a); transition: color 0.2s; }
-    .breadcrumb a:hover { color: var(--amber); }
-    .breadcrumb span { margin: 0 0.4rem; }
-    @media (max-width: 768px) {
-      .article-layout { grid-template-columns: 1fr; }
-      .article-aside { position: static; }
-    }
+    .page-hero__desc { font-size: 1.15rem; color: var(--text-sec); max-width: 640px; line-height: 1.7; margin-bottom: 2rem; }
+    .page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .arch-section { padding: 4rem 0; border-top: 1px solid var(--border); }
+    .arch-section__label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.75rem; }
+    .arch-section__title { font-family: var(--font-head); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .arch-section__desc { font-size: 1rem; color: var(--text-sec); line-height: 1.7; max-width: 600px; }
+    .arch-section-header { margin-bottom: 2.5rem; }
+    .arch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .arch-layer { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; display: flex; gap: 1rem; transition: border-color 0.2s; }
+    .arch-layer:hover { border-color: rgba(212,163,115,0.25); }
+    .arch-layer__num { font-family: var(--font-head); font-size: 0.72rem; font-weight: 700; color: var(--amber); opacity: 0.7; flex-shrink: 0; width: 24px; padding-top: 0.15rem; }
+    .arch-layer__title { font-family: var(--font-head); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .arch-layer__title a { color: var(--text-primary); transition: color 0.2s; }
+    .arch-layer__title a:hover { color: var(--amber); }
+    .arch-layer__desc { font-size: 0.78rem; color: var(--text-sec); line-height: 1.55; margin-bottom: 0.5rem; }
+    .arch-layer__cat { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); opacity: 0.7; }
+    @media (max-width: 900px) { .arch-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .arch-grid { grid-template-columns: 1fr; } .page-hero__actions { flex-direction: column; } }
   </style>
 </head>
 <body>
@@ -79,28 +70,148 @@
       </button>
       <ul class="nav__links" id="nav-links" role="list">
         <li><a href="/story">Story</a></li>
-        <li><a href="/founder-story">Founder Story</a></li>
         <li><a href="/architecture" aria-current="page">Architecture</a></li>
         <li><a href="/blog">Insights</a></li>
-        <li><a href="/#report">The Report</a></li>
-        <li><a href="/prototype.html">Prototype</a></li>
-        <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="nav__cta">Partner With Us</a></li>
+        <li>
+          <button class="nav__patent-btn" id="patent-btn" aria-haspopup="dialog" aria-controls="patent-modal" type="button">Patent Pending</button>
+        </li>
+        <li>
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="nav__cta">Register Interest</a>
+        </li>
       </ul>
     </nav>
   </header>
+
   <main id="main-content">
+
+    <!-- HERO -->
     <section class="page-hero">
       <div class="container">
         <p class="page-hero__eyebrow">Architecture</p>
-        <h1 class="page-hero__title">How RolegacyAI Works</h1>
-        <p class="page-hero__desc">RolegacyAI is built as a layered architecture — from the moment role knowledge is captured, through classification and sanitisation, to retrieval, scoring, and the generation of a successor brief. Each layer has a specific function. Together, they turn distributed, undocumented institutional knowledge into a structured, trustworthy, transferable role memory.</p>
+        <h1 class="page-hero__title">RolegacyAI Architecture</h1>
+        <p class="page-hero__desc">RolegacyAI is an operational continuity layer — built to sit between the people who hold institutional knowledge and the organisations that depend on it. When a role holder leaves, retires, or transitions, their accumulated knowledge doesn't have to leave with them.</p>
+        <div class="page-hero__actions">
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="btn btn--primary">Register Interest</a>
+          <a href="/blog" class="btn btn--ghost">Read the Insights →</a>
+        </div>
       </div>
     </section>
 
-    <section style="padding: 3rem 0 5rem; border-top: 1px solid var(--border);">
+    <!-- SYSTEM FLOW -->
+    <section class="arch-section">
       <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">System Flow</p>
+          <h2 class="arch-section__title">From role activity to successor readiness</h2>
+          <p class="arch-section__desc">Five architectural stages transform everyday role activity into a structured, transferable institutional memory — ready for the next person before the transition happens.</p>
+        </div>
+        <div class="arch-flow reveal reveal--delay-1">
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">Capture</div>
+            <div class="arch-flow__sub">Documents, meetings, workflows, inputs</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">Classify &amp; Sanitise</div>
+            <div class="arch-flow__sub">Taxonomy applied, personal data stripped</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">Store</div>
+            <div class="arch-flow__sub">Role memory persisted, versioned, graph-linked</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">Score &amp; Retrieve</div>
+            <div class="arch-flow__sub">Confidence, coverage, risk surfaced via RAG</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">Surface</div>
+            <div class="arch-flow__sub">Successor brief, readiness score, AI assistant</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEVEN CORE CAPABILITIES -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">Core Capabilities</p>
+          <h2 class="arch-section__title">Seven capabilities, one continuity outcome</h2>
+          <p class="arch-section__desc">Each capability solves a distinct part of the knowledge continuity problem. Together they produce a role memory that a successor can actually use.</p>
+        </div>
+        <div class="arch-core">
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">01 — KNOWLEDGE CAPTURE</div>
+            <h3 class="arch-core__title">Capture Engine</h3>
+            <p class="arch-core__desc">Ingests role knowledge from documents, meeting notes, workflows, and structured inputs. Converts unstructured activity into a normalised, machine-readable format that downstream layers can classify and store.</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-1">
+            <div class="arch-core__num">02 — CLASSIFICATION</div>
+            <h3 class="arch-core__title">Classification Engine</h3>
+            <p class="arch-core__desc">Applies a structured taxonomy — decisions, lessons, workarounds, processes, relationships, risk flags — to every captured memory entry. Makes the institutional record navigable and queryable across any role or team.</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-2">
+            <div class="arch-core__num">03 — SECURITY</div>
+            <h3 class="arch-core__title">Sanitisation Engine</h3>
+            <p class="arch-core__desc">Separates institutional knowledge from personal information before anything is stored. Removes sensitive content and ensures the role memory is safe to retain, share, and audit — without compromising the departing employee's privacy.</p>
+          </div>
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">04 — SUCCESSOR READINESS</div>
+            <h3 class="arch-core__title">Successor Brief Generator</h3>
+            <p class="arch-core__desc">Generates the structured handoff document a successor inherits when they take over a role. Not a generic AI summary — a role-specific brief drawn from validated memory, scored for completeness, and tailored to the incoming person's context.</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-1">
+            <div class="arch-core__num">05 — SCORING</div>
+            <h3 class="arch-core__title">Confidence &amp; Coverage Scoring</h3>
+            <p class="arch-core__desc">Every memory entry carries a confidence score based on source reliability, corroboration, recency, and human validation. Coverage scoring measures how completely a role's knowledge domains are documented — and surfaces the gaps that need filling.</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-2">
+            <div class="arch-core__num">06 — ARCHITECTURE</div>
+            <h3 class="arch-core__title">Human Validation Loop</h3>
+            <p class="arch-core__desc">Every AI-extracted memory entry passes through a human review stage before entering the validated record. Role holders and subject-matter experts can approve, correct, or reject entries — keeping the institutional memory trustworthy at scale.</p>
+          </div>
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">07 — AI UPLIFT</div>
+            <h3 class="arch-core__title">AI Uplift Measurement</h3>
+            <p class="arch-core__desc">Captures and transfers the AI-enhanced workflows a role holder develops over time — prompt libraries, agent configurations, and productivity patterns. When they leave, their AI uplift is preserved for the successor, not lost with the person.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE DEEP DIVE — all 20 components -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">Architecture Deep Dive</p>
+          <h2 class="arch-section__title">All 20 architecture components</h2>
+          <p class="arch-section__desc">The complete technical reference — every layer of the RolegacyAI architecture, from vector embeddings to agentic workflows.</p>
+        </div>
         <div class="arch-grid">
-          
           <div class="arch-layer reveal">
             <div class="arch-layer__num">01</div>
             <div class="arch-layer__body">
@@ -262,32 +373,120 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div style="margin-top: 4rem; background: var(--panel); border: 1px solid rgba(212,163,115,0.2); border-radius: 12px; padding: 2rem;">
-          <h2 style="font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; margin-bottom: 0.75rem;">The full picture</h2>
-          <p style="font-size: 1rem; color: var(--text-sec); line-height: 1.75; max-width: 680px; margin-bottom: 1.5rem;">If your best employee left tomorrow, what would the next person inherit? RolegacyAI answers that question by making role knowledge visible, structured, and transferable before the transition happens.</p>
-          <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="btn btn--primary">Start a Conversation</a>
-            <a href="blog.html" class="btn btn--ghost">Read the Insights →</a>
+    <!-- ENTERPRISE TRUST -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">Enterprise Grade</p>
+          <h2 class="arch-section__title">Built for institutional trust</h2>
+          <p class="arch-section__desc">Enterprise knowledge is sensitive. Every architecture decision in RolegacyAI reflects that.</p>
+        </div>
+        <div class="arch-trust">
+          <div class="arch-trust__item reveal">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">Multi-Tenant Isolation</div>
+              <p class="arch-trust__desc">Each organisation's role memory is fully isolated. No cross-tenant data access at any layer of the architecture.</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal reveal--delay-1">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+              </svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">Privacy-First by Design</div>
+              <p class="arch-trust__desc">Personal information is stripped at the sanitisation layer before any memory entry is stored. The institutional record contains no personal data.</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal reveal--delay-2">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">Human-in-the-Loop</div>
+              <p class="arch-trust__desc">No AI extraction enters the validated record without human review. Role holders and subject-matter experts approve every memory entry.</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M12 2L15.1 8.3L22 9.3L17 14.1L18.2 21L12 17.8L5.8 21L7 14.1L2 9.3L8.9 8.3L12 2Z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">Patent Pending Architecture</div>
+              <p class="arch-trust__desc">The core architecture — including the personal role layer boundary and successor brief generation process — is patent pending.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- VERTICALS -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">Where It Applies</p>
+          <h2 class="arch-section__title">Built for operationally complex industries</h2>
+          <p class="arch-section__desc">RolegacyAI was designed for environments where role knowledge is hard to replace, transitions are high-risk, and institutional memory sits in people rather than systems.</p>
+        </div>
+        <div class="arch-verticals">
+          <div class="arch-vertical reveal">
+            <div class="arch-vertical__label">Maximo &amp; EAM Teams</div>
+            <p class="arch-vertical__sub">Asset management roles where years of system knowledge, workaround patterns, and vendor relationships are locked in the outgoing person.</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-1">
+            <div class="arch-vertical__label">ServiceNow Operators</div>
+            <p class="arch-vertical__sub">ITSM and workflow configuration teams whose platform knowledge is undocumented and impossible to transfer through a standard handover.</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-2">
+            <div class="arch-vertical__label">Transport &amp; Infrastructure</div>
+            <p class="arch-vertical__sub">Long-tenure operational roles in rail, ports, and utilities — where a single departure can strand years of project context and vendor relationships.</p>
+          </div>
+          <div class="arch-vertical reveal">
+            <div class="arch-vertical__label">Consulting &amp; Managed Services</div>
+            <p class="arch-vertical__sub">Client-embedded practitioners who carry relationship history, delivery patterns, and institutional context that doesn't survive rotation.</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-1">
+            <div class="arch-vertical__label">Mining &amp; Resources</div>
+            <p class="arch-vertical__sub">Site operations, safety procedures, and equipment-specific knowledge held by experienced operators approaching retirement.</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-2">
+            <div class="arch-vertical__label">Enterprise Delivery</div>
+            <p class="arch-vertical__sub">Programme and delivery leads whose context — stakeholder maps, risk history, decision rationale — determines the next project's success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="reveal" style="background: linear-gradient(135deg, var(--panel) 0%, rgba(212,163,115,0.06) 100%); border: 1px solid rgba(212,163,115,0.2); border-radius: 16px; padding: 3rem; max-width: 720px;">
+          <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:0.75rem;">Ready to Build</p>
+          <h2 style="font-family:var(--font-head);font-size:1.75rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:0.75rem;">If your best person left tomorrow, what would remain?</h2>
+          <p style="font-size:1rem;color:var(--text-sec);line-height:1.75;max-width:560px;margin-bottom:1.75rem;">RolegacyAI answers that question — by making role knowledge visible, structured, and transferable before the transition happens. We're working with a small number of design partners.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="btn btn--primary">Register Interest</a>
+            <a href="/blog" class="btn btn--ghost">Read the Insights →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <style>
-    .arch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .arch-layer { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; display: flex; gap: 1rem; transition: border-color 0.2s; }
-    .arch-layer:hover { border-color: rgba(212,163,115,0.25); }
-    .arch-layer__num { font-family: var(--font-head); font-size: 0.72rem; font-weight: 700; color: var(--amber); opacity: 0.7; flex-shrink: 0; width: 24px; padding-top: 0.15rem; }
-    .arch-layer__title { font-family: var(--font-head); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .arch-layer__title a { color: var(--text-primary); transition: color 0.2s; }
-    .arch-layer__title a:hover { color: var(--amber); }
-    .arch-layer__desc { font-size: 0.78rem; color: var(--text-sec); line-height: 1.55; margin-bottom: 0.5rem; }
-    .arch-layer__cat { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); opacity: 0.7; }
-    @media (max-width: 900px) { .arch-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 600px) { .arch-grid { grid-template-columns: 1fr; } }
-  </style>
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
@@ -306,10 +505,12 @@
         </div>
         <nav class="footer__links" aria-label="Footer navigation">
           <ul role="list">
+            <li><a href="/story">Story</a></li>
+            <li><a href="/founder-story">Founder Story</a></li>
             <li><a href="/architecture">Architecture</a></li>
             <li><a href="/blog">Insights</a></li>
             <li><a href="/prototype.html">Prototype</a></li>
-            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry">Partner With Us</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest">Register Interest</a></li>
             <li><a href="mailto:hello@rolegacyai.com">Contact</a></li>
           </ul>
         </nav>
@@ -320,6 +521,26 @@
       </div>
     </div>
   </footer>
+
+  <div id="patent-modal" class="patent-modal" role="dialog" aria-modal="true" aria-labelledby="patent-modal-title" hidden>
+    <div class="patent-modal__backdrop" id="patent-modal-backdrop"></div>
+    <div class="patent-modal__card">
+      <button class="patent-modal__close" id="patent-modal-close" aria-label="Close dialog" type="button">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <line x1="3" y1="3" x2="15" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15" y1="3" x2="3" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="patent-modal__icon" aria-hidden="true">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L15.1 8.3L22 9.3L17 14.1L18.2 21L12 17.8L5.8 21L7 14.1L2 9.3L8.9 8.3L12 2Z" stroke="#d4a373" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <h2 id="patent-modal-title" class="patent-modal__title">Patent Pending</h2>
+      <p class="patent-modal__body">RolegacyAI patent pending. More details will be added soon.</p>
+    </div>
+  </div>
+
   <script src="./script.js"></script>
 </body>
 </html>

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RolegacyAI 如何运作 — 运营连续性架构</title>
-  <meta name="description" content="了解 RolegacyAI 如何通过工作流智能和岗位技能包捕获岗位记忆、构建组织知识并创建接任准备度。" />
+  <title>RolegacyAI 架构 — 企业岗位运营连续性层</title>
+  <meta name="description" content="RolegacyAI 的分层架构如何捕获、分类并呈现机构岗位知识，在交接发生前建立接任准备度。" />
   <link rel="canonical" href="https://rolegacyai.com/zh/architecture/" />
   <link rel="alternate" hreflang="x-default" href="https://rolegacyai.com/architecture" />
-  <link rel="alternate" hreflang="en" href="https://rolegacyai.com/architecture" />
+  <link rel="alternate" hreflang="en"    href="https://rolegacyai.com/architecture" />
   <link rel="alternate" hreflang="zh-CN" href="https://rolegacyai.com/zh/architecture/" />
-  <link rel="alternate" hreflang="hi" href="https://rolegacyai.com/hi/architecture/" />
-  <link rel="alternate" hreflang="mr" href="https://rolegacyai.com/mr/architecture/" />
+  <link rel="alternate" hreflang="hi"    href="https://rolegacyai.com/hi/architecture/" />
+  <link rel="alternate" hreflang="mr"    href="https://rolegacyai.com/mr/architecture/" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="RolegacyAI 如何运作 — 运营连续性架构" />
-  <meta property="og:description" content="了解 RolegacyAI 如何通过工作流智能和岗位技能包捕获岗位记忆、构建组织知识并创建接任准备度。" />
+  <meta property="og:title" content="RolegacyAI 架构 — 企业岗位运营连续性层" />
+  <meta property="og:description" content="RolegacyAI 的分层架构如何捕获、分类并呈现机构岗位知识，在交接发生前建立接任准备度。" />
   <meta property="og:url" content="https://rolegacyai.com/zh/architecture/" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -21,19 +21,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
-
   <style>
-    .lang-sw { display:inline-flex; align-items:center; gap:2px; padding:3px; border:1px solid rgba(228,229,228,0.12); border-radius:999px; background:rgba(15,15,16,0.88); backdrop-filter:blur(10px); flex-shrink:0; margin-left:0.5rem; }
-    .lang-sw__btn { border:0; border-radius:999px; padding:0.32rem 0.5rem; background:transparent; color:#a1a1aa; font-family:'Space Grotesk',system-ui,sans-serif; font-size:0.72rem; font-weight:700; cursor:pointer; transition:background .2s,color .2s; text-decoration:none; line-height:1; }
-    .lang-sw__btn:hover { color:#f4f4f5; }
-    .lang-sw__btn--active { background:#d4a373; color:#0f0f10; }
-    @media(max-width:768px){ .lang-sw { margin-left:0; margin-top:0.5rem; } }
+    .lang-sw{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(228,229,228,0.12);border-radius:999px;background:rgba(15,15,16,0.88);backdrop-filter:blur(10px);flex-shrink:0;margin-left:0.5rem}
+    .lang-sw__btn{border:0;border-radius:999px;padding:0.32rem 0.5rem;background:transparent;color:#a1a1aa;font-family:'Space Grotesk',system-ui,sans-serif;font-size:0.72rem;font-weight:700;cursor:pointer;transition:background .2s,color .2s;text-decoration:none;line-height:1}
+    .lang-sw__btn:hover{color:#f4f4f5}
+    .lang-sw__btn--active{background:#d4a373;color:#0f0f10}
+    @media(max-width:768px){.lang-sw{margin-left:0;margin-top:0.5rem}}
   </style>
   <style>
-    .page-hero{padding:7rem 0 3rem;border-bottom:1px solid var(--border)}
+    .page-hero{padding:7rem 0 3.5rem;border-bottom:1px solid var(--border)}
     .page-hero__eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}
     .page-hero__title{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem}
-    .page-hero__desc{font-size:1.15rem;color:var(--text-sec);max-width:640px;line-height:1.7}
+    .page-hero__desc{font-size:1.15rem;color:var(--text-sec);max-width:640px;line-height:1.7;margin-bottom:2rem}
+    .page-hero__actions{display:flex;gap:1rem;flex-wrap:wrap}
+    .arch-section{padding:4rem 0;border-top:1px solid var(--border)}
+    .arch-section__label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem}
+    .arch-section__title{font-family:var(--font-head);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;letter-spacing:-.02em;margin-bottom:.75rem}
+    .arch-section__desc{font-size:1rem;color:var(--text-sec);line-height:1.7;max-width:600px}
+    .arch-section-header{margin-bottom:2.5rem}
     .arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
     .arch-layer{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;gap:1rem;transition:border-color .2s}
     .arch-layer:hover{border-color:rgba(212,163,115,0.25)}
@@ -44,7 +49,7 @@
     .arch-layer__desc{font-size:.78rem;color:var(--text-sec);line-height:1.55;margin-bottom:.5rem}
     .arch-layer__cat{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);opacity:.7}
     @media(max-width:900px){.arch-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.arch-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){.arch-grid{grid-template-columns:1fr}.page-hero__actions{flex-direction:column}}
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JPC2N2CP5"></script>
@@ -72,207 +77,419 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="/zh/#how-it-works">工作原理</a></li>
         <li><a href="/zh/story/">故事</a></li>
-        <li><a href="/zh/architecture/">架构</a></li>
+        <li><a href="/zh/architecture/" aria-current="page">架构</a></li>
         <li><a href="/zh/blog/">洞察</a></li>
-        <li><a href="/zh/#report">报告</a></li>
-        <li><a href="/zh/prototype/">原型</a></li>
         <li>
           <button class="nav__patent-btn" id="patent-btn" aria-haspopup="dialog" aria-controls="patent-modal" type="button">Patent Pending</button>
         </li>
         <li>
-          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="nav__cta">与我们合作</a>
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="nav__cta">登记兴趣</a>
         </li>
       </ul>
       <div class="lang-sw" role="navigation" aria-label="Language switcher">
-          <a href="/architecture" class="lang-sw__btn" hreflang="en" aria-label="Switch to EN">EN</a><a href="/zh/architecture/" class="lang-sw__btn lang-sw__btn--active" hreflang="zh-CN" aria-label="Switch to 中文">中文</a><a href="/hi/architecture/" class="lang-sw__btn" hreflang="hi" aria-label="Switch to हिन्दी">हिन्दी</a><a href="/mr/architecture/" class="lang-sw__btn" hreflang="mr" aria-label="Switch to मराठी">मराठी</a>
-        </div>
+        <a href="/architecture" class="lang-sw__btn" hreflang="en" aria-label="Switch to EN">EN</a><a href="/zh/architecture/" class="lang-sw__btn lang-sw__btn--active" hreflang="zh-CN" aria-label="Switch to 中文">中文</a><a href="/hi/architecture/" class="lang-sw__btn" hreflang="hi" aria-label="Switch to हिन्दी">हिन्दी</a><a href="/mr/architecture/" class="lang-sw__btn" hreflang="mr" aria-label="Switch to मराठी">मराठी</a>
+      </div>
     </nav>
   </header>
+
   <main id="main-content">
+
+    <!-- HERO -->
     <section class="page-hero">
       <div class="container">
         <p class="page-hero__eyebrow">架构</p>
-        <h1 class="page-hero__title">RolegacyAI 如何运作</h1>
-        <p class="page-hero__desc">RolegacyAI 采用分层架构——从岗位知识被捕获的那一刻，经过分类和脱敏，到检索、评分，再到接任简报的生成。每一层各司其职，共同将分散的隐性知识转化为结构化、可信赖、可传承的岗位记忆。</p>
+        <h1 class="page-hero__title">RolegacyAI 架构</h1>
+        <p class="page-hero__desc">RolegacyAI 是一个运营连续性层 — 建立在掌握机构知识的人与依赖这些知识的组织之间。当岗位持有者离职、退休或转岗时，他们积累的知识不必随之消失。</p>
+        <div class="page-hero__actions">
+          <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="btn btn--primary">登记兴趣</a>
+          <a href="/zh/blog/" class="btn btn--ghost">阅读洞察 →</a>
+        </div>
       </div>
     </section>
-    <section style="padding:3rem 0 5rem;border-top:1px solid var(--border)">
+
+    <!-- SYSTEM FLOW -->
+    <section class="arch-section">
       <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">系统流程</p>
+          <h2 class="arch-section__title">从岗位活动到接任准备</h2>
+          <p class="arch-section__desc">五个架构阶段将日常岗位活动转化为结构化、可传承的机构记忆 — 在交接发生前就为下一位接任者做好准备。</p>
+        </div>
+        <div class="arch-flow reveal reveal--delay-1">
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">捕获</div>
+            <div class="arch-flow__sub">文件、会议、工作流和输入</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">分类与脱敏</div>
+            <div class="arch-flow__sub">应用分类法，剥离个人数据</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">存储</div>
+            <div class="arch-flow__sub">岗位记忆持久化、版本化、知识图谱关联</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">评分与检索</div>
+            <div class="arch-flow__sub">通过 RAG 呈现置信度、覆盖率和风险</div>
+          </div>
+          <div class="arch-flow__step">
+            <div class="arch-flow__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="arch-flow__label">输出</div>
+            <div class="arch-flow__sub">接任简报、准备度评分、AI 助手</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEVEN CORE CAPABILITIES -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">核心能力</p>
+          <h2 class="arch-section__title">七项能力，一个连续性成果</h2>
+          <p class="arch-section__desc">每项能力解决知识连续性问题的不同方面。共同产生接任者可以真正使用的岗位记忆。</p>
+        </div>
+        <div class="arch-core">
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">01 — 知识捕获</div>
+            <h3 class="arch-core__title">捕获引擎</h3>
+            <p class="arch-core__desc">从文件、会议记录、工作流和结构化输入中摄取岗位知识。将非结构化活动转化为规范化、可机器读取的格式，供下游层进行分类和存储。</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-1">
+            <div class="arch-core__num">02 — 分类</div>
+            <h3 class="arch-core__title">分类引擎</h3>
+            <p class="arch-core__desc">对每个捕获的记忆条目应用结构化分类法 — 决策、经验教训、变通方法、流程、关系、风险标记。让机构记录在任何岗位或团队中都可导航和查询。</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-2">
+            <div class="arch-core__num">03 — 安全</div>
+            <h3 class="arch-core__title">脱敏引擎</h3>
+            <p class="arch-core__desc">在存储之前将机构知识与个人信息分离。删除敏感内容，确保岗位记忆可安全保留、共享和审计 — 同时不损害离职员工的隐私。</p>
+          </div>
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">04 — 接任准备度</div>
+            <h3 class="arch-core__title">接任简报生成器</h3>
+            <p class="arch-core__desc">生成接任者接管岗位时继承的结构化交接文件。不是通用 AI 摘要 — 而是从经验证的记忆中提取的、针对完整性评分的、为接任者量身定制的岗位专属简报。</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-1">
+            <div class="arch-core__num">05 — 评分</div>
+            <h3 class="arch-core__title">置信度与覆盖度评分</h3>
+            <p class="arch-core__desc">每个记忆条目都带有基于来源可靠性、相互印证、时效性和人工验证的置信度评分。覆盖度评分衡量岗位知识领域的文档完整程度 — 并呈现需要填补的差距。</p>
+          </div>
+          <div class="arch-core__card reveal reveal--delay-2">
+            <div class="arch-core__num">06 — 架构</div>
+            <h3 class="arch-core__title">人工验证闭环</h3>
+            <p class="arch-core__desc">每个 AI 提取的记忆条目在进入已验证记录之前都经过人工审核阶段。岗位持有者和主题专家可以批准、纠正或拒绝条目 — 大规模保持机构记忆的可信度。</p>
+          </div>
+          <div class="arch-core__card reveal">
+            <div class="arch-core__num">07 — AI 增效</div>
+            <h3 class="arch-core__title">AI 增效衡量</h3>
+            <p class="arch-core__desc">捕获并转移岗位持有者随时间开发的 AI 增强工作流 — 提示库、智能体配置和生产力模式。当他们离职时，他们的 AI 增效为接任者保留，而不是随人消失。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE DEEP DIVE -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">架构深度解析</p>
+          <h2 class="arch-section__title">全部 20 个架构组件</h2>
+          <p class="arch-section__desc">完整技术参考 — RolegacyAI 架构的每一层，从向量嵌入到智能体工作流。</p>
+        </div>
         <div class="arch-grid">
           <div class="arch-layer reveal">
             <div class="arch-layer__num">01</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/capture-engine">捕获引擎</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI captures role knowledge from documents, meetings, workflows, and structured inputs — and turns it into structured institutional memory.</p>
-              <span class="arch-layer__cat">Knowledge Capture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何从文件、会议、工作流和结构化输入中捕获岗位知识，并将其转化为结构化的机构记忆。</p>
+              <span class="arch-layer__cat">知识捕获</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">02</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/classification-engine">分类引擎</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI classifies captured role knowledge into a structured taxonomy — decisions, lessons, workarounds, processes, relationships, and more.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何将捕获的岗位知识分类为结构化分类法 — 决策、经验教训、变通方法、流程、关系等。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">03</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/sanitisation-engine">脱敏引擎</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI separates institutional knowledge from personal information, removes sensitive content, and ensures role memory is safe to store and share.</p>
-              <span class="arch-layer__cat">Security</span>
+              <p class="arch-layer__desc">RolegacyAI 如何将机构知识与个人信息分离，删除敏感内容，确保岗位记忆可安全存储和共享。</p>
+              <span class="arch-layer__cat">安全</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">04</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/personal-role-layer">个人与岗位边界层</a></h3>
-              <p class="arch-layer__desc">The technical and conceptual boundary between a role holder's personal knowledge and the institutional knowledge that belongs to the role — and how RolegacyAI manages it.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">岗位持有者的个人知识与属于该岗位的机构知识之间的技术和概念边界 — 以及 RolegacyAI 如何管理它。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">05</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/rag-engine">RAG 检索增强引擎</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI uses Retrieval Augmented Generation to surface relevant role memories in context — powering the successor brief, AI assistant, and onboarding tools.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何使用检索增强生成在上下文中呈现相关的岗位记忆，为接任简报、AI 助手和入职工具提供支持。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">06</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/confidence-scoring">置信度评分</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI scores confidence in each memory entry based on source reliability, corroboration, recency, and human validation — and how that score drives review and retrieval.</p>
-              <span class="arch-layer__cat">Scoring</span>
+              <p class="arch-layer__desc">RolegacyAI 如何根据来源可靠性、相互印证、时效性和人工验证对每个记忆条目进行置信度评分，以及该分数如何驱动审核和检索。</p>
+              <span class="arch-layer__cat">评分</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">07</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/coverage-scoring">覆盖度评分</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI measures how completely a role's knowledge domains are documented — and uses gap identification to improve successor readiness.</p>
-              <span class="arch-layer__cat">Scoring</span>
+              <p class="arch-layer__desc">RolegacyAI 如何衡量岗位的知识领域被记录的完整程度，并使用差距识别来提高接任准备度。</p>
+              <span class="arch-layer__cat">评分</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">08</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/successor-brief-generator">接任简报生成器</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI generates the structured handoff document that a successor inherits when they take over a role — and what makes it different from a generic AI summary.</p>
-              <span class="arch-layer__cat">Successor Readiness</span>
+              <p class="arch-layer__desc">RolegacyAI 如何生成接任者接管岗位时继承的结构化交接文件，以及为何它与通用 AI 摘要不同。</p>
+              <span class="arch-layer__cat">接任准备度</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">09</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/role-risk-score">岗位风险评分</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI calculates the knowledge continuity risk for any role — and how organisations use it to prioritise where to invest in memory capture before it's too late.</p>
-              <span class="arch-layer__cat">Scoring</span>
+              <p class="arch-layer__desc">RolegacyAI 如何计算任何岗位的知识连续性风险，以及组织如何使用它来优先考虑在为时已晚之前投资记忆捕获的位置。</p>
+              <span class="arch-layer__cat">评分</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">10</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/ai-uplift-measurement">AI 增效衡量</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI measures the efficiency and capability improvements that AI tools create at the role level — making the invisible visible and preserving the improvement for successors.</p>
-              <span class="arch-layer__cat">AI Uplift</span>
+              <p class="arch-layer__desc">RolegacyAI 如何衡量 AI 工具在岗位层面创造的效率和能力提升，让不可见的变得可见，并为接任者保留这种提升。</p>
+              <span class="arch-layer__cat">AI 增效</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">11</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/multi-tenant-security">多租户安全</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI isolates role memory between organisations, enforces access controls, and maintains the security posture required for enterprise institutional knowledge.</p>
-              <span class="arch-layer__cat">Security</span>
+              <p class="arch-layer__desc">RolegacyAI 如何在组织之间隔离岗位记忆，实施访问控制，并维持企业机构知识所需的安全态势。</p>
+              <span class="arch-layer__cat">安全</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">12</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/human-validation-loop">人工验证闭环</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI involves role holders and subject-matter experts in validating, correcting, and approving AI-extracted memories — keeping the institutional record trustworthy.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何让岗位持有者和主题专家参与验证、纠正和批准 AI 提取的记忆，保持机构记录的可信度。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">13</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/knowledge-graph">知识图谱</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI connects role memories through a structured knowledge graph — enabling relationship traversal, pattern discovery, and richer context for successor briefing.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何通过结构化知识图谱连接岗位记忆，实现关系遍历、模式发现，为接任简报提供更丰富的上下文。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">14</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/agentic-workflows">智能体工作流</a></h3>
-              <p class="arch-layer__desc">How autonomous agents can use RolegacyAI role memory to complete onboarding tasks, answer successor questions, coordinate transitions, and fill knowledge gaps.</p>
-              <span class="arch-layer__cat">Workflow Intelligence</span>
+              <p class="arch-layer__desc">自主代理如何使用 RolegacyAI 岗位记忆完成入职任务、回答接任者问题、协调过渡并填补知识空白。</p>
+              <span class="arch-layer__cat">工作流智能</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">15</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/deduplication-engine">去重引擎</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI detects, merges, and reconciles duplicate or near-duplicate role memory entries to keep the institutional memory clean, coherent, and trustworthy.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何检测、合并和协调重复或近似重复的岗位记忆条目，保持机构记忆的清晰、连贯和可信。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">16</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/api-integrations">API 集成</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI connects to the enterprise tools where role knowledge lives — enabling capture, trigger-based workflows, and role memory consumption across the stack.</p>
-              <span class="arch-layer__cat">Integrations</span>
+              <p class="arch-layer__desc">RolegacyAI 如何连接到岗位知识所在的企业工具，实现捕获、基于触发器的工作流和整个技术栈中的岗位记忆使用。</p>
+              <span class="arch-layer__cat">集成</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">17</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/vector-embeddings">向量嵌入</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI encodes role memories as vector embeddings to enable semantic search, similarity detection, and context-aware retrieval across the institutional memory store.</p>
-              <span class="arch-layer__cat">Architecture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何将岗位记忆编码为向量嵌入，实现跨机构记忆库的语义搜索、相似性检测和上下文感知检索。</p>
+              <span class="arch-layer__cat">架构</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-2">
             <div class="arch-layer__num">18</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/memory-timeline">记忆时间线</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI organises role memories chronologically — providing a navigable history of decisions, transitions, and institutional learning across every holder of a role.</p>
-              <span class="arch-layer__cat">Knowledge Capture</span>
+              <p class="arch-layer__desc">RolegacyAI 如何按时间顺序组织岗位记忆，提供跨岗位每位持有者的决策、过渡和机构学习的可导航历史。</p>
+              <span class="arch-layer__cat">知识捕获</span>
             </div>
           </div>
           <div class="arch-layer reveal">
             <div class="arch-layer__num">19</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/successor-readiness-score">接任准备度评分</a></h3>
-              <p class="arch-layer__desc">The composite score that measures how ready a role is for transition — combining coverage, confidence, brief completeness, and knowledge transfer progress into a single operational metric.</p>
-              <span class="arch-layer__cat">Successor Readiness</span>
+              <p class="arch-layer__desc">衡量岗位是否准备好过渡的综合评分，将覆盖率、置信度、简报完整性和知识转移进度合并为单一运营指标。</p>
+              <span class="arch-layer__cat">接任准备度</span>
             </div>
           </div>
           <div class="arch-layer reveal reveal--delay-1">
             <div class="arch-layer__num">20</div>
             <div class="arch-layer__body">
               <h3 class="arch-layer__title"><a href="/blog/prompt-engineering">提示词工程</a></h3>
-              <p class="arch-layer__desc">How RolegacyAI approaches prompt engineering for role memory tasks — from capture and classification to successor brief generation — and how prompt libraries are captured and transferred.</p>
-              <span class="arch-layer__cat">AI Uplift</span>
+              <p class="arch-layer__desc">RolegacyAI 如何处理岗位记忆任务的提示工程 — 从捕获和分类到接任简报生成 — 以及如何捕获和转移提示库。</p>
+              <span class="arch-layer__cat">AI 增效</span>
             </div>
           </div>
         </div>
-        <div style="margin-top:4rem;background:var(--panel);border:1px solid rgba(212,163,115,0.2);border-radius:12px;padding:2rem">
-          <h2 style="font-family:var(--font-head);font-size:1.35rem;font-weight:600;margin-bottom:.75rem">完整图景</h2>
-          <p style="font-size:1rem;color:var(--text-sec);line-height:1.75;max-width:680px;margin-bottom:1.5rem">如果您最优秀的员工明天离职，下一任会继承什么？RolegacyAI 通过在交接发生前让岗位知识可见、结构化和可转移来回答这个问题。</p>
+      </div>
+    </section>
+
+    <!-- ENTERPRISE TRUST -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">企业级</p>
+          <h2 class="arch-section__title">为机构信任而构建</h2>
+          <p class="arch-section__desc">企业知识是敏感的。RolegacyAI 的每一个架构决策都反映了这一点。</p>
+        </div>
+        <div class="arch-trust">
+          <div class="arch-trust__item reveal">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">多租户隔离</div>
+              <p class="arch-trust__desc">每个组织的岗位记忆完全隔离。架构的任何层都不存在跨租户数据访问。</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal reveal--delay-1">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">隐私优先设计</div>
+              <p class="arch-trust__desc">个人信息在脱敏层处理后存储任何记忆条目之前被剥离。机构记录不包含个人数据。</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal reveal--delay-2">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">人工参与验证</div>
+              <p class="arch-trust__desc">任何 AI 提取不经过人工审核都不会进入已验证记录。岗位持有者和主题专家批准每个记忆条目。</p>
+            </div>
+          </div>
+          <div class="arch-trust__item reveal">
+            <div class="arch-trust__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a373" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 2L15.1 8.3L22 9.3L17 14.1L18.2 21L12 17.8L5.8 21L7 14.1L2 9.3L8.9 8.3L12 2Z"/></svg>
+            </div>
+            <div>
+              <div class="arch-trust__title">专利申请中</div>
+              <p class="arch-trust__desc">核心架构 — 包括个人岗位层边界和接任简报生成流程 — 正在申请专利。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICALS -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="arch-section-header reveal">
+          <p class="arch-section__label">适用领域</p>
+          <h2 class="arch-section__title">为运营复杂的行业而构建</h2>
+          <p class="arch-section__desc">RolegacyAI 专为岗位知识难以替代、过渡风险高、机构记忆存在于人而非系统中的环境而设计。</p>
+        </div>
+        <div class="arch-verticals">
+          <div class="arch-vertical reveal">
+            <div class="arch-vertical__label">Maximo 和企业资产管理团队</div>
+            <p class="arch-vertical__sub">多年系统知识、变通方法和供应商关系锁定在离职人员身上的资产管理岗位。</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-1">
+            <div class="arch-vertical__label">ServiceNow 运营商</div>
+            <p class="arch-vertical__sub">ITSM 和工作流配置团队，其平台知识未被记录，无法通过标准交接转移。</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-2">
+            <div class="arch-vertical__label">交通与基础设施</div>
+            <p class="arch-vertical__sub">铁路、港口和公用事业中的长期运营岗位，单次离职可能导致多年的项目背景和供应商关系丧失。</p>
+          </div>
+          <div class="arch-vertical reveal">
+            <div class="arch-vertical__label">咨询与托管服务</div>
+            <p class="arch-vertical__sub">嵌入客户的从业者，携带着客户关系历史、交付模式和机构背景，无法在轮换中保留。</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-1">
+            <div class="arch-vertical__label">采矿与资源</div>
+            <p class="arch-vertical__sub">接近退休的有经验操作员掌握的现场运营、安全程序和设备专用知识。</p>
+          </div>
+          <div class="arch-vertical reveal reveal--delay-2">
+            <div class="arch-vertical__label">企业交付</div>
+            <p class="arch-vertical__sub">项目和交付负责人，其背景 — 利益相关者图谱、风险历史、决策依据 — 决定下一个项目的成功。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="arch-section">
+      <div class="container">
+        <div class="reveal" style="background:linear-gradient(135deg,var(--panel) 0%,rgba(212,163,115,0.06) 100%);border:1px solid rgba(212,163,115,0.2);border-radius:16px;padding:3rem;max-width:720px">
+          <p style="font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem">准备开始</p>
+          <h2 style="font-family:var(--font-head);font-size:1.75rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.75rem">如果您最优秀的人明天离职，还会剩下什么？</h2>
+          <p style="font-size:1rem;color:var(--text-sec);line-height:1.75;max-width:560px;margin-bottom:1.75rem">RolegacyAI 回答这个问题 — 通过在交接发生前让岗位知识变得可见、结构化和可转移。我们正在与少数设计合作伙伴合作。</p>
           <div style="display:flex;gap:1rem;flex-wrap:wrap">
-            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry" class="btn btn--primary">开始对话</a>
+            <a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest" class="btn btn--primary">登记兴趣</a>
             <a href="/zh/blog/" class="btn btn--ghost">阅读洞察 →</a>
           </div>
         </div>
       </div>
     </section>
+
   </main>
+
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
@@ -291,10 +508,11 @@
         </div>
         <nav class="footer__links" aria-label="Footer navigation">
           <ul role="list">
+            <li><a href="/zh/story/">故事</a></li>
             <li><a href="/zh/architecture/">架构</a></li>
             <li><a href="/zh/blog/">洞察</a></li>
             <li><a href="/zh/prototype/">原型</a></li>
-            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Partnership%20Enquiry">与我们合作</a></li>
+            <li><a href="mailto:hello@rolegacyai.com?subject=RolegacyAI%20Register%20Interest">登记兴趣</a></li>
             <li><a href="mailto:hello@rolegacyai.com">联系</a></li>
           </ul>
         </nav>
@@ -305,6 +523,7 @@
       </div>
     </div>
   </footer>
+
   <div id="patent-modal" class="patent-modal" role="dialog" aria-modal="true" aria-labelledby="patent-modal-title" hidden>
     <div class="patent-modal__backdrop" id="patent-modal-backdrop"></div>
     <div class="patent-modal__card">
