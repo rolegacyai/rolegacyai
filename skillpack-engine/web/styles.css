@@ -1,0 +1,1 @@
+body{background:#111;color:#f4e3b2;font-family:Arial}.wrap{max-width:1000px;margin:20px auto}.controls{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}select,button{background:#1d1d1d;color:#f4e3b2;border:1px solid #b48a2f;padding:8px}pre{background:#191919;border:1px solid #b48a2f;padding:12px;min-height:300px}

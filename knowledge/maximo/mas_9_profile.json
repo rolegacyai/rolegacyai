@@ -1,0 +1,9 @@
+{
+  "version": "9.x",
+  "architecture": "MAS feature-channel operations on OpenShift",
+  "key_focus": [
+    "release cadence discipline",
+    "platform-app compatibility",
+    "resilience engineering"
+  ]
+}

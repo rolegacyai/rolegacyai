@@ -1,0 +1,12 @@
+{
+  "roles": [
+    "functional-consultant",
+    "technical-consultant",
+    "integration-consultant",
+    "architect",
+    "administrator",
+    "support-lead",
+    "mas-platform-admin",
+    "upgrade-migration-specialist"
+  ]
+}

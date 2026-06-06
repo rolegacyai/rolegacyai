@@ -1,0 +1,10 @@
+{
+  "patterns": [
+    "oslc-query",
+    "mif-object-structures",
+    "json-rest-nextgen",
+    "event-driven-messaging",
+    "batch-integration",
+    "master-data-sync"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "versions": [
+    "7.6.x",
+    "8.x",
+    "9.x"
+  ],
+  "map": {
+    "7": "maximo_7_6_profile",
+    "8": "mas_8_profile",
+    "9": "mas_9_profile"
+  }
+}

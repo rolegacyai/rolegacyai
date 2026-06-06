@@ -1,0 +1,20 @@
+{
+  "models": [
+    {
+      "id": "traditional-websphere",
+      "name": "Traditional/WebSphere"
+    },
+    {
+      "id": "mas-openshift",
+      "name": "MAS/OpenShift"
+    },
+    {
+      "id": "cloud-managed",
+      "name": "Cloud-managed"
+    },
+    {
+      "id": "hybrid",
+      "name": "Hybrid"
+    }
+  ]
+}

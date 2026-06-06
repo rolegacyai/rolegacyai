@@ -1,0 +1,9 @@
+{
+  "questions": [
+    "What is your current Maximo/MAS version and patch cadence?",
+    "Who owns OpenShift platform SRE responsibilities?",
+    "What integrations are business-critical in first 24h of outage?",
+    "Which customizations are unsupported or no longer maintainable?",
+    "How are security roles promoted across environments?"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "industries": [
+    "transport",
+    "utilities",
+    "infrastructure",
+    "manufacturing",
+    "government",
+    "mining",
+    "healthcare",
+    "generic"
+  ]
+}

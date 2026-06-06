@@ -1,0 +1,9 @@
+{
+  "version": "8.x",
+  "architecture": "MAS core on OpenShift",
+  "key_focus": [
+    "operator lifecycle",
+    "route/tls governance",
+    "day-2 runbooks"
+  ]
+}
